@@ -48,6 +48,12 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 
+# Ignore specific unused file
+UnusedFile.txt
+
+# Ignore specific unused folder
+UnusedFolder/
+
 # Unity3D generated file on crash reports
 sysinfo.txt
 
