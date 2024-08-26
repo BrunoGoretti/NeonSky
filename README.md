@@ -1,5 +1,5 @@
 # NeonSky
-Hey 👋
+
 This is my Unity engine game "NeonSky".
 Looks like a Flappy Bird style game with retro pixel graphics.
 
