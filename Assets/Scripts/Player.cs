@@ -67,16 +67,17 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = sprites[spriteIndex];
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Obstacle"))
     {
-        if (other.CompareTag("Obstacle"))
-        {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-        }
-        else if (other.CompareTag("Scoring"))
-        {
-            FindObjectOfType<GameManager>()?.IncreaseScore();
-        }
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosion.transform.SetParent(other.transform);
+        gameObject.SetActive(false);
     }
+    else if (other.CompareTag("Scoring"))
+    {
+        FindObjectOfType<GameManager>()?.IncreaseScore();
+    }
+}
 }

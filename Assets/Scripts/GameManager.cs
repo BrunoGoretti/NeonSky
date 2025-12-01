@@ -9,13 +9,16 @@ public class GameManager : MonoBehaviour
     public GameObject gameOver;
     private int score;
 
-    private void Awake()
-    {
-        Application.targetFrameRate = 60;
+private void Awake()
+{
+    Application.targetFrameRate = 60;
 
-        Pause();
-    }
+    // Make sure gameOver UI is hidden at start
+    gameOver.SetActive(false);
+    playButton.SetActive(true);
 
+    Pause();
+}
 public void Play()
 {
     score = 0;
