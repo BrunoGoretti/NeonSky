@@ -9,6 +9,8 @@ public class Explosion : MonoBehaviour
     private int index = 0;
     public float frameRate = 0.08f;
 
+    public float moveSpeed = 5f; 
+
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -21,18 +23,23 @@ public class Explosion : MonoBehaviour
         InvokeRepeating(nameof(Animate), frameRate, frameRate);
     }
 
-private void Animate()
-{
-    index++;
-    if (index >= explosionSprites.Length)
+    private void Update()
     {
-        CancelInvoke(nameof(Animate));
-        Destroy(gameObject);
-
-        FindObjectOfType<GameManager>().GameOver();  
-        return;
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
     }
 
-    sr.sprite = explosionSprites[index];
-}
+    private void Animate()
+    {
+        index++;
+        if (index >= explosionSprites.Length)
+        {
+            CancelInvoke(nameof(Animate));
+            Destroy(gameObject);
+
+            FindObjectOfType<GameManager>().GameOver();  
+            return;
+        }
+
+        sr.sprite = explosionSprites[index];
+    }
 }

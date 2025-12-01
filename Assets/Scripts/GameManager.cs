@@ -13,7 +13,6 @@ private void Awake()
 {
     Application.targetFrameRate = 60;
 
-    // Make sure gameOver UI is hidden at start
     gameOver.SetActive(false);
     playButton.SetActive(true);
 
