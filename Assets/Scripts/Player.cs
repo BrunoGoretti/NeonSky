@@ -3,12 +3,18 @@
 public class Player : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    public GameObject explosionPrefab;
     public Sprite[] sprites;
     private int spriteIndex;
 
     private Vector3 direction;
-    public float gravity = -9.8f;
-    public float strength = 5f;
+    public float gravity = -6f;
+    public float strength = 10f;
+    private float verticalVelocity = 0f;
+    private float maxVerticalSpeed = 14f;
+
+    private float verticalAcceleration = 14f;
+
 
     private void Awake()
     {
@@ -30,21 +36,27 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) { 
-            direction = Vector3.up * strength;
-        }
+        float horizontalInput = 0f;
+        if (Input.GetKey(KeyCode.A))
+            horizontalInput = -1f;
+        else if (Input.GetKey(KeyCode.D))
+            horizontalInput = 1f;
 
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
+        float verticalInput = 0f;
+        if (Input.GetKey(KeyCode.W))
+            verticalInput = 2f;
+        else if (Input.GetKey(KeyCode.S))
+            verticalInput = -1f;
 
-            if (touch.phase == TouchPhase.Began) { 
-                direction = Vector3.up * strength;
-            }
-        }
+        verticalVelocity += verticalInput * verticalAcceleration * Time.deltaTime;
 
-        direction.y += gravity * Time.deltaTime;
-        transform.position += direction * Time.deltaTime;
+        verticalVelocity += gravity * Time.deltaTime;
+
+        verticalVelocity = Mathf.Clamp(verticalVelocity, -maxVerticalSpeed, maxVerticalSpeed);
+
+        Vector3 horizontalMovement = new Vector3(horizontalInput * strength * Time.deltaTime, 0, 0);
+
+        transform.position += horizontalMovement + new Vector3(0, verticalVelocity * Time.deltaTime, 0);
     }
 
     private void AnimatedSprite()
@@ -61,13 +73,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Obstacle")
+      if (other.CompareTag("Obstacle"))
+{
+    Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+    gameObject.SetActive(false);
+}
+        else if (other.CompareTag("Scoring"))
         {
-            FindObjectOfType<GameManager>().GameOver();
-        }
-        else if (other.gameObject.tag == "Scoring")
-        {
-            FindObjectOfType<GameManager>().IncreaseScore();  
+            FindObjectOfType<GameManager>().IncreaseScore();
         }
     }
 

@@ -16,24 +16,26 @@ public class GameManager : MonoBehaviour
         Pause();
     }
 
-    public void Play()
-    {
-        score = 0;
-        scoreText.text = score.ToString();
+public void Play()
+{
+    score = 0;
+    scoreText.text = score.ToString();
 
-        playButton.SetActive(false);
-        gameOver.SetActive(false);
+    playButton.SetActive(false);
+    gameOver.SetActive(false);
 
-        Time.timeScale = 1f;
-        player.enabled = true;
+    player.gameObject.SetActive(true);
 
-        Pipes[] pipes = FindObjectsOfType<Pipes>();
+    player.enabled = true;
 
-        for (int i = 0; i < pipes.Length; i++)
-        {
-            Destroy(pipes[i].gameObject);
-        }
-    }
+    Time.timeScale = 1f;
+
+    Pipes[] pipes = FindObjectsOfType<Pipes>();
+    for (int i = 0; i < pipes.Length; i++)
+        Destroy(pipes[i].gameObject);
+
+    player.transform.position = new Vector3(0, 0, 0);
+}
 
     public void Pause()
     {
