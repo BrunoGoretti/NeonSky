@@ -14,6 +14,7 @@ public class Explosion : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        sr.sortingOrder = -1;
     }
 
     private void OnEnable()

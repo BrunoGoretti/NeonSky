@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7732751521744254146}
   m_Layer: 0
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3715262457438393352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3635852, y: 0.79156595, z: 0.038022272}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2142485781
+  m_SortingLayer: 1
+  m_SortingOrder: 167
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,3 +105,4 @@ MonoBehaviour:
   - {fileID: -1061452716, guid: fc6c89552f38a3b40a2a2178ec36b271, type: 3}
   - {fileID: 504457938, guid: fc6c89552f38a3b40a2a2178ec36b271, type: 3}
   frameRate: 0.08
+  moveSpeed: 5
