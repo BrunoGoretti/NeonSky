@@ -7,7 +7,14 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
 
     public GameObject explosionPrefab;
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
     public Sprite[] sprites;
+
+    public float bulletSpeed = 20f;
+    public float fireRate = 0.25f;
+    private float nextFireTime = 0f;
     private int spriteIndex;
 
     public float horizontalSpeed = 10f;
@@ -32,11 +39,36 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         Vector3 pos = transform.position;
-        pos.y = 0f;
+        pos.y = 2f;
         transform.position = pos;
         verticalVelocity = 0f;
 
         rb.velocity = Vector2.zero;
+    }
+
+
+    private void Update()
+    {
+        HandleShooting();
+
+    }
+    private void HandleShooting()
+    {
+        if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
+        {
+            Shoot();
+            nextFireTime = Time.time + fireRate;
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+        if (bulletRb != null)
+        {
+            bulletRb.velocity = transform.right * bulletSpeed;
+        }
     }
 
     private void FixedUpdate()
