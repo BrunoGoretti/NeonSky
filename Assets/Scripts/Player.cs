@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public Sprite[] sprites;
+    public GameObject flashPrefab;
 
     public float bulletSpeed = 20f;
     public float fireRate = 0.25f;
@@ -61,15 +62,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Shoot()
+private void Shoot()
+{
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+    if (bulletRb != null)
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        if (bulletRb != null)
-        {
-            bulletRb.velocity = transform.right * bulletSpeed;
-        }
+        bulletRb.velocity = transform.right * bulletSpeed;
     }
+
+    if (flashPrefab != null)
+    {
+        Instantiate(flashPrefab, firePoint.position, firePoint.rotation, firePoint);
+
+    }
+}
 
     private void FixedUpdate()
     {
