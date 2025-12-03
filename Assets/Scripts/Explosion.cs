@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
     private SpriteRenderer sr;
     private int index = 0;
     public float frameRate = 0.08f;
-
+    public bool isPlayerExplosion = false;
     public float moveSpeed = 5f;
     public GameObject explosionLightPrefab;
     private GameObject activeLightInstance;
@@ -38,7 +38,7 @@ public class Explosion : MonoBehaviour
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
     }
 
-    private void Animate()
+private void Animate()
     {
         index++;
         if (index >= explosionSprites.Length)
@@ -52,7 +52,11 @@ public class Explosion : MonoBehaviour
 
             Destroy(gameObject);
 
-            FindObjectOfType<GameManager>().GameOver();
+            if (isPlayerExplosion)
+            {
+                FindObjectOfType<GameManager>().GameOver();
+            }
+
             return;
         }
 

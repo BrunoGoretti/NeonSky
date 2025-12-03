@@ -23,9 +23,21 @@ public class PlayerBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Enemy"))
     {
-
-        Destroy(gameObject);
+        EnemyJetA enemy = other.GetComponent<EnemyJetA>();
+        if (enemy != null)
+        {
+            enemy.Explode();  // This triggers the explosion effect
+        }
+        else
+        {
+            Destroy(other.gameObject);  // fallback
+        }
     }
+
+    Destroy(gameObject);
+}
 }

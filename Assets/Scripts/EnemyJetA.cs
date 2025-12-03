@@ -6,6 +6,7 @@ public class EnemyJetA : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
+    public GameObject explosionPrefab; 
 
     public Sprite[] sprites;
     private int spriteIndex;
@@ -47,4 +48,18 @@ public class EnemyJetA : MonoBehaviour
         spriteIndex = (spriteIndex + 1) % sprites.Length;
         spriteRenderer.sprite = sprites[spriteIndex];
     }
+
+public void Explode()
+{
+    if (explosionPrefab != null)
+    {
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Explosion explosionScript = explosion.GetComponent<Explosion>();
+        if (explosionScript != null)
+        {
+            explosionScript.isPlayerExplosion = false;
+        }
+    }
+    Destroy(gameObject);
+}
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5732342596146426917}
   m_Layer: 0
   m_Name: EnemyA
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,9 +146,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15351701}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.27670252
 --- !u!114 &5732342596146426917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb52c411b4d11049a8662867b797c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 3715262457438393352, guid: ea3579fc1b519594bb752f5629e7f7bb,
+    type: 3}
   sprites:
   - {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}

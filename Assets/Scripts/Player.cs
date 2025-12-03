@@ -124,27 +124,23 @@ public class Player : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(viewportPos);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Obstacle"))
     {
-        if (other.CompareTag("Obstacle"))
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Explosion explosionScript = explosion.GetComponent<Explosion>();
+        if (explosionScript != null)
         {
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+            explosionScript.isPlayerExplosion = true;
             Pipes pipeScript = other.GetComponent<Pipes>();
             if (pipeScript != null)
             {
-                Explosion explosionScript = explosion.GetComponent<Explosion>();
-                if (explosionScript != null)
-                {
-                    explosionScript.moveSpeed = pipeScript.speed;
-                }
+                explosionScript.moveSpeed = pipeScript.speed;
             }
+        }
 
-            gameObject.SetActive(false);
-        }
-        else if (other.CompareTag("Scoring"))
-        {
-            FindObjectOfType<GameManager>()?.IncreaseScore();
-        }
+        gameObject.SetActive(false);
     }
+}
 }
