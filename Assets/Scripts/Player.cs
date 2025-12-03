@@ -154,7 +154,7 @@ private void OnTriggerEnter2D(Collider2D other)
     }
 }
 
-private void ExplodePlayer()
+public void ExplodePlayer()
 {
     if (explosionPrefab != null)
     {

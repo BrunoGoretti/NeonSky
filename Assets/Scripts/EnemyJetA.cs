@@ -7,10 +7,15 @@ public class EnemyJetA : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     public GameObject explosionPrefab; 
+    public GameObject enemyBulletPrefab;
+    public Transform firePoint;
 
     public Sprite[] sprites;
     private int spriteIndex;
     public float moveSpeed = 5f;
+ 
+    public float fireRate = 1.5f; 
+    private float nextFireTime = 0f;
     public float verticalAmplitude = 1f;
     public float verticalFrequency = 1f;
 
@@ -30,18 +35,39 @@ public class EnemyJetA : MonoBehaviour
         InvokeRepeating(nameof(AnimateSprite), 0.08f, 0.08f);
     }
 
-    private void Update()
+private void Update()
+{
+    // Existing movement code
+    transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+
+    float newY = startPosition.y + Mathf.Sin(Time.time * verticalFrequency) * verticalAmplitude;
+    transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+
+    if (Camera.main.WorldToViewportPoint(transform.position).x < -0.1f)
     {
-        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        Destroy(gameObject);
+    }
 
-        float newY = startPosition.y + Mathf.Sin(Time.time * verticalFrequency) * verticalAmplitude;
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+    // Shooting logic
+    if (Time.time >= nextFireTime)
+    {
+        Shoot();
+        nextFireTime = Time.time + fireRate;
+    }
+}
 
-        if (Camera.main.WorldToViewportPoint(transform.position).x < -0.1f)
+private void Shoot()
+{
+    if (enemyBulletPrefab != null && firePoint != null)
+    {
+        GameObject bullet = Instantiate(enemyBulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+        if (bulletRb != null)
         {
-            Destroy(gameObject);
+            bulletRb.velocity = Vector2.left * 20f; // Same speed as player bullet but to left
         }
     }
+}
 
     private void AnimateSprite()
     {

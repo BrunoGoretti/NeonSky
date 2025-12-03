@@ -30,11 +30,11 @@ private void OnTriggerEnter2D(Collider2D other)
         EnemyJetA enemy = other.GetComponent<EnemyJetA>();
         if (enemy != null)
         {
-            enemy.Explode();  // This triggers the explosion effect
+            enemy.Explode();  
         }
         else
         {
-            Destroy(other.gameObject);  // fallback
+            Destroy(other.gameObject);  
         }
     }
 
