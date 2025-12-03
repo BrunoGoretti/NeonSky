@@ -62,21 +62,21 @@ public class Player : MonoBehaviour
         }
     }
 
-private void Shoot()
-{
-    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-    Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-    if (bulletRb != null)
+    private void Shoot()
     {
-        bulletRb.velocity = transform.right * bulletSpeed;
-    }
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+        if (bulletRb != null)
+        {
+            bulletRb.velocity = transform.right * bulletSpeed;
+        }
 
-    if (flashPrefab != null)
-    {
-        Instantiate(flashPrefab, firePoint.position, firePoint.rotation, firePoint);
+        if (flashPrefab != null)
+        {
+            Instantiate(flashPrefab, firePoint.position, firePoint.rotation, firePoint);
 
+        }
     }
-}
 
     private void FixedUpdate()
     {
@@ -93,6 +93,8 @@ private void Shoot()
             verticalInput = -1f;
 
         verticalVelocity += verticalInput * verticalAcceleration * Time.fixedDeltaTime;
+        verticalVelocity *= 0.95f;
+
         verticalVelocity = Mathf.Clamp(verticalVelocity, -maxVerticalSpeed, maxVerticalSpeed);
 
         Vector2 velocity = new Vector2(horizontalInput * horizontalSpeed, verticalVelocity);
@@ -104,6 +106,21 @@ private void Shoot()
     {
         spriteIndex = (spriteIndex + 1) % sprites.Length;
         spriteRenderer.sprite = sprites[spriteIndex];
+    }
+    private void LateUpdate()
+    {
+        KeepPlayerInsideScreen();
+    }
+    private void KeepPlayerInsideScreen()
+    {
+        Vector3 pos = transform.position;
+
+        Vector3 viewportPos = Camera.main.WorldToViewportPoint(pos);
+
+        viewportPos.x = Mathf.Clamp(viewportPos.x, 0.00f, 1f);
+        viewportPos.y = Mathf.Clamp(viewportPos.y, 0.00f, 1f);
+
+        transform.position = Camera.main.ViewportToWorldPoint(viewportPos);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
