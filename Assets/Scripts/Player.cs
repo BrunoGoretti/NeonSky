@@ -75,7 +75,6 @@ public class Player : MonoBehaviour
         if (flashPrefab != null)
         {
             Instantiate(flashPrefab, firePoint.position, firePoint.rotation, firePoint);
-
         }
     }
 

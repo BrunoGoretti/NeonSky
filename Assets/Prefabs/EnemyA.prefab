@@ -197,6 +197,8 @@ MonoBehaviour:
     type: 3}
   enemyBulletPrefab: {fileID: 4007091526683939465, guid: 26152753ee4b32b4ca2f11dfe43f7bc0,
     type: 3}
+  flashPrefab: {fileID: 7817427041030878826, guid: 2bcf823970cd8734f9438a872922e89e,
+    type: 3}
   firePoint: {fileID: 2172117610644739871}
   sprites:
   - {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}

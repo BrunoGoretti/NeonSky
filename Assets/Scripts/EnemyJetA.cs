@@ -8,6 +8,7 @@ public class EnemyJetA : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject explosionPrefab; 
     public GameObject enemyBulletPrefab;
+    public GameObject flashPrefab;
     public Transform firePoint;
 
     public Sprite[] sprites;
@@ -37,7 +38,6 @@ public class EnemyJetA : MonoBehaviour
 
 private void Update()
 {
-    // Existing movement code
     transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
     float newY = startPosition.y + Mathf.Sin(Time.time * verticalFrequency) * verticalAmplitude;
@@ -48,7 +48,6 @@ private void Update()
         Destroy(gameObject);
     }
 
-    // Shooting logic
     if (Time.time >= nextFireTime)
     {
         Shoot();
@@ -62,9 +61,15 @@ private void Shoot()
     {
         GameObject bullet = Instantiate(enemyBulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+
         if (bulletRb != null)
         {
-            bulletRb.velocity = Vector2.left * 20f; // Same speed as player bullet but to left
+            bulletRb.velocity = Vector2.left * 20f;
+        }
+
+        if (flashPrefab != null)
+        {
+            Instantiate(flashPrefab, firePoint.position, firePoint.rotation, firePoint);
         }
     }
 }
