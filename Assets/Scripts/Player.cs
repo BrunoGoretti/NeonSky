@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
         rb.gravityScale = 5f;
         rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.freezeRotation = true;
     }
 
     private void Start()
