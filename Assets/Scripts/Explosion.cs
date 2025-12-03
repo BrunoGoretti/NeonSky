@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -11,8 +10,9 @@ public class Explosion : MonoBehaviour
     public float frameRate = 0.08f;
     public bool isPlayerExplosion = false;
     public float moveSpeed = 5f;
+
     public GameObject explosionLightPrefab;
-    private GameObject activeLightInstance;
+    private Light2D explosionLight;  
 
     private void Awake()
     {
@@ -29,7 +29,11 @@ public class Explosion : MonoBehaviour
 
         if (explosionLightPrefab != null)
         {
-            activeLightInstance = Instantiate(explosionLightPrefab, transform.position, Quaternion.identity, transform);
+            GameObject instance = Instantiate(explosionLightPrefab, transform.position, Quaternion.identity, transform);
+            explosionLight = instance.GetComponent<Light2D>();
+
+            if (explosionLight != null)
+                StartCoroutine(FadeLight());
         }
     }
 
@@ -38,18 +42,35 @@ public class Explosion : MonoBehaviour
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
     }
 
-private void Animate()
+    private IEnumerator FadeLight()
+    {
+        float duration = explosionSprites.Length * frameRate;
+        float time = 0f;
+        float startIntensity = explosionLight.intensity;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            if (explosionLight != null)
+            {
+                explosionLight.intensity = Mathf.Lerp(startIntensity, 0f, time / duration);
+            }
+
+            yield return null;
+        }
+
+        if (explosionLight != null)
+            Destroy(explosionLight.gameObject);
+    }
+
+    private void Animate()
     {
         index++;
+
         if (index >= explosionSprites.Length)
         {
             CancelInvoke(nameof(Animate));
-
-            if (activeLightInstance != null)
-            {
-                Destroy(activeLightInstance);
-            }
-
             Destroy(gameObject);
 
             if (isPlayerExplosion)
