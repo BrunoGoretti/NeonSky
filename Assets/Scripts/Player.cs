@@ -126,21 +126,41 @@ public class Player : MonoBehaviour
 
 private void OnTriggerEnter2D(Collider2D other)
 {
-    if (other.CompareTag("Obstacle"))
+    if (other.CompareTag("Enemy"))
     {
-        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Explosion explosionScript = explosion.GetComponent<Explosion>();
-        if (explosionScript != null)
+        ExplodePlayer();
+
+        EnemyJetA enemy = other.GetComponent<EnemyJetA>();
+        if (enemy != null)
         {
-            explosionScript.isPlayerExplosion = true;
-            Pipes pipeScript = other.GetComponent<Pipes>();
-            if (pipeScript != null)
+            enemy.Explode();
+        }
+    }
+    else if (other.CompareTag("Obstacle"))
+    {
+        ExplodePlayer();
+
+        Pipes pipeScript = other.GetComponent<Pipes>();
+        if (pipeScript != null && explosionPrefab != null)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Explosion explosionScript = explosion.GetComponent<Explosion>();
+            if (explosionScript != null)
             {
+                explosionScript.isPlayerExplosion = true;
                 explosionScript.moveSpeed = pipeScript.speed;
             }
         }
-
-        gameObject.SetActive(false);
     }
+}
+
+private void ExplodePlayer()
+{
+    if (explosionPrefab != null)
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity)
+            .GetComponent<Explosion>().isPlayerExplosion = true;
+    }
+    gameObject.SetActive(false);
 }
 }
