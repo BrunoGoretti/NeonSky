@@ -170,7 +170,7 @@ MonoBehaviour:
   - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   - {fileID: -1191239228, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   baseMoveSpeed: 6
-  fireRate: 1.5
+  fireRate: 1
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -182,9 +182,6 @@ MonoBehaviour:
   minYOffset: 5
   playerTrackingStrength: 2.2
   trackingActivationDistance: 16
-  enableWander: 1
-  wanderStrength: 1.8
-  wanderChangeInterval: 2.5
 --- !u!60 &1403522257998360108
 PolygonCollider2D:
   m_ObjectHideFlags: 0
