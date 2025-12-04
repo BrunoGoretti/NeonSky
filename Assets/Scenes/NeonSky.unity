@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 1248839649}
   - component: {fileID: 1248839650}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: PipeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,15 +1321,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248839648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abeab389d3cc95444ac8b95d4842ef3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b2b8fb1cc764b7429955a7a71aeac02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9010335881893436113, guid: 244babd07b1deb34688cced9c307a71f, type: 3}
-  spawnRate: 1
-  minHeight: -1
-  maxHeight: 3
+  prefab: {fileID: 2368997755167641828, guid: d22ce73fad2c4f54cbaf3c5a7e88ac55, type: 3}
+  minSpawnRate: 0.5
+  maxSpawnRate: 2
+  minYOffset: -2
+  maxYOffset: 0
 --- !u!1 &1399552064
 GameObject:
   m_ObjectHideFlags: 0
