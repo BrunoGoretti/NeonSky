@@ -9,6 +9,8 @@ TagManager:
   - Pipe
   - Explosion
   - Enemy
+  - Sky
+  - City
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Sky
   - 
   - 
   - 
@@ -51,4 +53,10 @@ TagManager:
     locked: 0
   - name: Explotion
     uniqueID: 3332062983
+    locked: 0
+  - name: City
+    uniqueID: 4237756711
+    locked: 0
+  - name: Sky
+    uniqueID: 3560544375
     locked: 0
