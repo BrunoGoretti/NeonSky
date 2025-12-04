@@ -123,43 +123,43 @@ public class Player : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(viewportPos);
     }
 
-private void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.CompareTag("Enemy"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        ExplodePlayer();
-
-        EnemyJetA enemy = other.GetComponent<EnemyJetA>();
-        if (enemy != null)
+        if (other.CompareTag("Enemy"))
         {
-            enemy.Explode();
-        }
-    }
-    else if (other.CompareTag("Obstacle"))
-    {
-        ExplodePlayer();
+            ExplodePlayer();
 
-        Pipes pipeScript = other.GetComponent<Pipes>();
-        if (pipeScript != null && explosionPrefab != null)
-        {
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Explosion explosionScript = explosion.GetComponent<Explosion>();
-            if (explosionScript != null)
+            EnemyJetA enemy = other.GetComponent<EnemyJetA>();
+            if (enemy != null)
             {
-                explosionScript.isPlayerExplosion = true;
-                explosionScript.moveSpeed = pipeScript.speed;
+                enemy.Explode();
+            }
+        }
+        else if (other.CompareTag("Obstacle"))
+        {
+            ExplodePlayer();
+
+            Pipes pipeScript = other.GetComponent<Pipes>();
+            if (pipeScript != null && explosionPrefab != null)
+            {
+                GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Explosion explosionScript = explosion.GetComponent<Explosion>();
+                if (explosionScript != null)
+                {
+                    explosionScript.isPlayerExplosion = true;
+                    explosionScript.moveSpeed = pipeScript.speed;
+                }
             }
         }
     }
-}
 
-public void ExplodePlayer()
-{
-    if (explosionPrefab != null)
+    public void ExplodePlayer()
     {
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity)
-            .GetComponent<Explosion>().isPlayerExplosion = true;
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity)
+                .GetComponent<Explosion>().isPlayerExplosion = true;
+        }
+        gameObject.SetActive(false);
     }
-    gameObject.SetActive(false);
-}
 }

@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 2719666607274198973}
   - component: {fileID: 7905004667846203174}
   - component: {fileID: 3620864834770445175}
-  - component: {fileID: 6698256146762088165}
   - component: {fileID: 5732342596146426917}
+  - component: {fileID: 1403522257998360108}
   m_Layer: 0
   m_Name: EnemyA
   m_TagString: Enemy
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -146,8 +146,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &6698256146762088165
-CircleCollider2D:
+--- !u!114 &5732342596146426917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369064245798641049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb52c411b4d11049a8662867b797c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 3715262457438393352, guid: ea3579fc1b519594bb752f5629e7f7bb,
+    type: 3}
+  enemyBulletPrefab: {fileID: 4007091526683939465, guid: 26152753ee4b32b4ca2f11dfe43f7bc0,
+    type: 3}
+  flashPrefab: {fileID: 7817427041030878826, guid: 2bcf823970cd8734f9438a872922e89e,
+    type: 3}
+  firePoint: {fileID: 2172117610644739871}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleDetectDistance: 1.5
+  avoidSpeed: 3
+  verticalSmoothSpeed: 3
+  sprites:
+  - {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
+  - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
+  - {fileID: -1191239228, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
+  moveSpeed: 5
+  fireRate: 1.5
+  verticalAmplitude: 1
+  verticalFrequency: 1
+--- !u!60 &1403522257998360108
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -178,33 +211,25 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.14935628}
-  serializedVersion: 2
-  m_Radius: 0.22677383
---- !u!114 &5732342596146426917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5369064245798641049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb52c411b4d11049a8662867b797c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 3715262457438393352, guid: ea3579fc1b519594bb752f5629e7f7bb,
-    type: 3}
-  enemyBulletPrefab: {fileID: 4007091526683939465, guid: 26152753ee4b32b4ca2f11dfe43f7bc0,
-    type: 3}
-  flashPrefab: {fileID: 7817427041030878826, guid: 2bcf823970cd8734f9438a872922e89e,
-    type: 3}
-  firePoint: {fileID: 2172117610644739871}
-  sprites:
-  - {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
-  - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
-  - {fileID: -1191239228, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
-  moveSpeed: 3
-  fireRate: 1.5
-  verticalAmplitude: 1
-  verticalFrequency: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.25}
+    newSize: {x: 1.25, y: 1.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.41111636, y: -0.10492803}
+      - {x: -0.42316628, y: -0.24295999}
+      - {x: -0.26353955, y: -0.29214132}
+      - {x: 0.019089855, y: -0.3006711}
+      - {x: 0.36091965, y: -0.31272087}
+      - {x: 0.4291911, y: -0.16514397}
+      - {x: 0.48341465, y: 0.14002925}
+      - {x: 0.16368714, y: -0.013605416}
+      - {x: -0.18873581, y: 0.026063979}
+  m_UseDelaunayMesh: 0
