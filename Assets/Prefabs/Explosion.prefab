@@ -106,6 +106,6 @@ MonoBehaviour:
   - {fileID: 504457938, guid: fc6c89552f38a3b40a2a2178ec36b271, type: 3}
   frameRate: 0.08
   isPlayerExplosion: 0
-  moveSpeed: 5
+  moveSpeed: 2
   explosionLightPrefab: {fileID: 866340915338920380, guid: 9490c4fe3a04f694e8e37d553d5ec501,
     type: 3}

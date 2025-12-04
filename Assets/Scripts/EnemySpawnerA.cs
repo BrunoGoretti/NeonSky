@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnerA : MonoBehaviour
@@ -10,8 +8,10 @@ public class EnemySpawnerA : MonoBehaviour
     public float spawnYMin = -3f;
     public float spawnYMax = 3f;
 
-    public int maxEnemies = 5;          
+    public int maxEnemies = 5;
     private int spawnedEnemies = 0;
+
+    public float activationDistance = 25f;      private bool isActivated = false;
 
     private float timer;
 
@@ -19,12 +19,25 @@ public class EnemySpawnerA : MonoBehaviour
     {
         if (spawnedEnemies >= maxEnemies)
         {
-            Destroy(gameObject);     
+            Destroy(gameObject);
             return;
         }
 
-        timer += Time.deltaTime;
+        if (!isActivated)
+        {
+            float distance = transform.position.x - Camera.main.transform.position.x;
 
+            if (distance < activationDistance)
+            {
+                isActivated = true;
+            }
+            else
+            {
+                return;  
+            }
+        }
+
+        timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
             SpawnEnemy();
@@ -32,13 +45,16 @@ public class EnemySpawnerA : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
-    {
-        Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, Random.Range(0f, 1f), 10f));
-        spawnPos.y = Random.Range(spawnYMin, spawnYMax);
+void SpawnEnemy()
+{
+    Vector3 rightEdge = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0f, Camera.main.nearClipPlane));
+    
+    float spawnX = rightEdge.x + 1.5f;
 
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+    Vector3 spawnPos = new Vector3(spawnX, Random.Range(spawnYMin, spawnYMax), transform.position.z);
 
-        spawnedEnemies++;
-    }
+    Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+
+    spawnedEnemies++;
+}
 }
