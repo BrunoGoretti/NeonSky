@@ -3,7 +3,11 @@ guid: fedc028c1b81e604d899f0b0ac35d961
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - playButton: {instanceID: 0}
+  - gameOver: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

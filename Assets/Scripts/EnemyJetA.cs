@@ -156,7 +156,6 @@ public class EnemyJetA : MonoBehaviour
         if (dir.y < -0.3f) return Vector2.up * strength;
         if (dir.y > 0.3f) return Vector2.down * strength;
 
-        // Check safe spaces for horizontal threats
         bool spaceAbove = !Physics2D.Raycast(position + Vector2.up * safeBuffer, Vector2.left, detectionDistance, obstacleLayer);
         bool spaceBelow = !Physics2D.Raycast(position + Vector2.down * safeBuffer, Vector2.left, detectionDistance, obstacleLayer);
 
@@ -189,6 +188,13 @@ public class EnemyJetA : MonoBehaviour
         if (sprites.Length == 0) return;
         spriteIndex = (spriteIndex + 1) % sprites.Length;
         spriteRenderer.sprite = sprites[spriteIndex];
+    }
+
+        private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Obstacle")) return;
+        
+        Explode();
     }
 
     public void Explode()

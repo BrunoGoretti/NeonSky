@@ -175,7 +175,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   detectionDistance: 3
-  avoidanceForce: 1
+  avoidanceForce: 2
   maxVerticalSpeed: 6
   safeBuffer: 2.5
   maxYOffset: 6

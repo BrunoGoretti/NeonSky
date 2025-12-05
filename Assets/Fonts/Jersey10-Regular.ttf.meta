@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0402e8eb24c95d439fb81a0cbfb52b8
+guid: 5009e6e4ee9d76b47ac931880688ed3f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,8 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Laser Corps Laser
   fontNames:
-  - Laser Corps Laser
+  - Jersey 10
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
