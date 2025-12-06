@@ -16,7 +16,6 @@ public class PlayerGunFlash : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         if (frames == null || frames.Length == 0)
         {
-            Debug.LogWarning("FlashAnimation: No frames assigned!");
             Destroy(gameObject);
             return;
         }

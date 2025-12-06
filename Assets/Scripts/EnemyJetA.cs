@@ -25,6 +25,9 @@ public class EnemyJetA : MonoBehaviour
     [Header("Player Tracking")]
     [SerializeField] private float playerTrackingStrength = 2.2f;
     [SerializeField] private float trackingActivationDistance = 16f;
+    
+    [Header("Money Reward")]
+    [SerializeField] private int moneyReward = 10;
 
     private SpriteRenderer spriteRenderer;
     private int spriteIndex;
@@ -205,6 +208,8 @@ public class EnemyJetA : MonoBehaviour
             Explosion explosion = exp.GetComponent<Explosion>();
             if (explosion) explosion.isPlayerExplosion = false;
         }
+        MoneyManager.Instance?.AddMoney(moneyReward);
+
         Destroy(gameObject);
     }
 

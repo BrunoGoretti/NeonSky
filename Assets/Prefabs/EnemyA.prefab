@@ -183,6 +183,7 @@ MonoBehaviour:
   minYOffset: 5
   playerTrackingStrength: 2.2
   trackingActivationDistance: 16
+  moneyReward: 2
 --- !u!60 &1403522257998360108
 PolygonCollider2D:
   m_ObjectHideFlags: 0
