@@ -18,26 +18,22 @@ public class PlayerBullet : MonoBehaviour
         rb.velocity = Vector2.right * speed;
         Invoke(nameof(DestroyBullet), lifetime);
     }
+
     private void DestroyBullet()
     {
         Destroy(gameObject);
     }
 
-private void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.CompareTag("Enemy"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        EnemyJetA enemy = other.GetComponent<EnemyJetA>();
-        if (enemy != null)
+        if (other.CompareTag("Enemy"))
         {
-            enemy.Explode();  
+            if (other.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth))
+            {
+                enemyHealth.TakeDamage(1);
+            }
         }
-        else
-        {
-            Destroy(other.gameObject);  
-        }
-    }
 
-    Destroy(gameObject);
-}
+        Destroy(gameObject);
+    }
 }

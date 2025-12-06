@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3620864834770445175}
   - component: {fileID: 5732342596146426917}
   - component: {fileID: 1403522257998360108}
+  - component: {fileID: 214366217568287700}
   m_Layer: 0
   m_Name: EnemyA
   m_TagString: Enemy
@@ -169,7 +170,7 @@ MonoBehaviour:
   - {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   - {fileID: -1191239228, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
-  baseMoveSpeed: 6
+  baseMoveSpeed: 5
   fireRate: 1
   obstacleLayer:
     serializedVersion: 2
@@ -236,3 +237,16 @@ PolygonCollider2D:
       - {x: 0.16368714, y: -0.013605416}
       - {x: -0.18873581, y: 0.026063979}
   m_UseDelaunayMesh: 0
+--- !u!114 &214366217568287700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369064245798641049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3ff381b1c6844438d5e6d528c3a58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
