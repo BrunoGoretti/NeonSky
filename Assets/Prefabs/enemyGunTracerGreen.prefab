@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1587028586474238167}
   m_Layer: 0
   m_Name: enemyGunTracerGreen
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

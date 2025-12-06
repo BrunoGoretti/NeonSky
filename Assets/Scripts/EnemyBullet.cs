@@ -7,7 +7,8 @@ public class EnemyBullet : MonoBehaviour
     public float speed = 20f;
     public float lifetime = 2f;
     private Rigidbody2D rb;
- private void Awake()
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -23,17 +24,4 @@ public class EnemyBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Player playerScript = other.GetComponent<Player>();
-            if (playerScript != null)
-            {
-                playerScript.ExplodePlayer();
-            }
-        }
-
-        Destroy(gameObject);
-    }
 }
