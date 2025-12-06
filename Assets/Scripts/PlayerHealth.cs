@@ -4,8 +4,10 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
     private int currentHealth;
-
     private Player player;
+
+    public int CurrentHealth => currentHealth; 
+    public int MaxHealth => maxHealth;         
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Die();
         }
     }
