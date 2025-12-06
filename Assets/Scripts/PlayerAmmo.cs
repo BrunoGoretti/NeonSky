@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class PlayerAmmo : MonoBehaviour
 {
-    [SerializeField] private int maxBullets = 10;
+   [SerializeField] private int maxBullets = 10;
     private int currentBullets;
 
-    [SerializeField] private Text ammoText;
+    [SerializeField] private Text ammoText; 
 
     private void Awake()
     {
@@ -21,36 +21,24 @@ public class PlayerAmmo : MonoBehaviour
 
     public void UseBullet()
     {
-        if (currentBullets <= 0) return;
-        currentBullets--;
-        UpdateAmmoUI();
+        if (currentBullets > 0)
+        {
+            currentBullets--;
+            UpdateAmmoUI();
+        }
     }
 
     public void AddBullets(int amount)
     {
-        currentBullets = Mathf.Clamp(currentBullets + amount, 0, maxBullets);
+        currentBullets += amount;
+        if (currentBullets > maxBullets)
+            currentBullets = maxBullets;
         UpdateAmmoUI();
-    }
-
-    public void Reload()
-    {
-        currentBullets = maxBullets;
-        UpdateAmmoUI();
-    }
-
-    public int GetCurrentBullets()
-    {
-        return currentBullets;
-    }
-
-    public int GetMaxBullets()
-    {
-        return maxBullets;
     }
 
     private void UpdateAmmoUI()
     {
         if (ammoText != null)
-            ammoText.text = $"{currentBullets} / {maxBullets}";
+            ammoText.text = $"{currentBullets}";
     }
 }

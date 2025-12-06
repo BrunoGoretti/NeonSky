@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float bulletSpeed = 20f;
     [SerializeField] private float fireRate = 0.25f;
 
+    [Header("Ammo")]
+    private PlayerAmmo playerAmmo;
+
     private PlayerHealth health;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
         rb.gravityScale = 5f;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.freezeRotation = true;
+        playerAmmo = GetComponent<PlayerAmmo>();
     }
 
     private void Start() => InvokeRepeating(nameof(AnimateSprite), 0.08f, 0.08f);
@@ -92,12 +96,17 @@ public class Player : MonoBehaviour
     {
         if (!bulletPrefab || !firePoint) return;
 
+        if (playerAmmo == null || !playerAmmo.CanShoot())
+            return;
+
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D bulletRb))
             bulletRb.velocity = transform.right * bulletSpeed;
 
         if (flashPrefab)
             Instantiate(flashPrefab, firePoint.position, firePoint.rotation, firePoint);
+
+        playerAmmo.UseBullet();
 
         nextFireTime = Time.time + fireRate;
     }
@@ -116,32 +125,32 @@ public class Player : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(viewportPos);
     }
 
-private void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.CompareTag("EnemyBullet"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        health?.TakeDamage(1);
-        Destroy(other.gameObject);
-        return;
+        if (other.CompareTag("EnemyBullet"))
+        {
+            health?.TakeDamage(1);
+            Destroy(other.gameObject);
+            return;
+        }
+
+        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
+        {
+            health?.TakeDamage(999);
+
+            if (other.TryGetComponent<EnemyJetA>(out var enemy))
+                enemy.Explode();
+            else if (other.CompareTag("Obstacle"))
+                CreateObstacleExplosion(other);
+
+            return;
+        }
+
+        if (other.CompareTag("PlayerBullet"))
+        {
+            Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
     }
-
-    if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
-    {
-        health?.TakeDamage(999);   
-
-        if (other.TryGetComponent<EnemyJetA>(out var enemy))
-            enemy.Explode();
-        else if (other.CompareTag("Obstacle"))
-            CreateObstacleExplosion(other);
-
-        return;
-    }
-
-    if (other.CompareTag("PlayerBullet"))
-    {
-        Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-    }
-}
 
     private void CreateObstacleExplosion(Collider2D obstacle)
     {

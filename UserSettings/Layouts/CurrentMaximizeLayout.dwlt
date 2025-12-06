@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 337
     height: 556
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -243,18 +243,18 @@ MonoBehaviour:
       m_ExpandedIDs: 08fbffff046300006063000082630000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Money
-        m_OriginalName: Money
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -653050
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -315,7 +315,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 337
     y: 73
-    width: 1076
+    width: 1074
     height: 535
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -914,7 +914,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Fonts
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -922,15 +922,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Fonts
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Gor\source\repos\NeonSky
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 94670000
-    m_LastClickedID: 26516
+    m_SelectedIDs: 9c670000
+    m_LastClickedID: 26524
     m_ExpandedIDs: 00000000e2640000e4640000e6640000e8640000ea640000ec640000ee64000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
