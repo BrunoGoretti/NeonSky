@@ -4885,7 +4885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af52786e2509850429dc2bccddd704c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxSpeed: 5
+  parallaxSpeed: 4
   direction: {x: -1, y: 0, z: 0}
 --- !u!1 &766798089
 GameObject:
@@ -5030,6 +5030,7 @@ GameObject:
   - component: {fileID: 886389768}
   - component: {fileID: 886389770}
   - component: {fileID: 886389771}
+  - component: {fileID: 886389772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5218,6 +5219,19 @@ PolygonCollider2D:
       - {x: 0.04354602, y: 0.03910227}
       - {x: -0.18919016, y: 0.08405633}
   m_UseDelaunayMesh: 0
+--- !u!114 &886389772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886389765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecdf0e911dd8a34baf403fb83c110ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
 --- !u!1 &907646758
 GameObject:
   m_ObjectHideFlags: 0
