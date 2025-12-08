@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d85f561869e7884b9778789230f2487
-      internalID: 664925257
+      spriteID: 9d1dbe0ad8f96d0409cd5645530ac6c4
+      internalID: -1313398099
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8ce5d8dcc9d48e459e864441d75f33c
-      internalID: 905395227
+      spriteID: cca0ae058ed94184c8e883c96fecf731
+      internalID: 847469182
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12caf504be6b64245bc662425a3f051b
-      internalID: -1022388646
+      spriteID: defa0b2ddeb2cb44ab518f5db6fd933e
+      internalID: 636518845
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15d8e7c1d37d28e479ccb39dd8701890
-      internalID: 1223411526
+      spriteID: 16d0579fb0c949e45bc638811e57ab83
+      internalID: -551612226
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a860295b2743caa4ebe8f14e3b5a318c
-      internalID: 1329416453
+      spriteID: f5b38198416d04948ba2248a2af34a30
+      internalID: 554343269
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32fa0f397fd303944867af92668ccfb4
-      internalID: 1720210818
+      spriteID: feb50a77e9d13af4b8c65b608bb09408
+      internalID: 648294994
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player Damaged 3_0: 664925257
-      Player Damaged 3_1: 905395227
-      Player Damaged 3_2: -1022388646
-      Player Damaged 3_3: 1223411526
-      Player Damaged 3_4: 1329416453
-      Player Damaged 3_5: 1720210818
+      Player Damaged 3_0: -1313398099
+      Player Damaged 3_1: 847469182
+      Player Damaged 3_2: 636518845
+      Player Damaged 3_3: -551612226
+      Player Damaged 3_4: 554343269
+      Player Damaged 3_5: 648294994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

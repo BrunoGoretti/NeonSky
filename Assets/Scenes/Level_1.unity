@@ -15725,7 +15725,7 @@ MonoBehaviour:
   maxVerticalSpeed: 14
   verticalAcceleration: 14
   bulletSpeed: 20
-  fireRate: 0.25
+  fireRate: 0.15
   normalSprites:
   - {fileID: 1208940477, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
   - {fileID: 1709988831, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
@@ -15735,16 +15735,16 @@ MonoBehaviour:
   - {fileID: 1090532533, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
   - {fileID: -575234595, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
   superDamagedSprites:
-  - {fileID: 243766348, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
-  - {fileID: 218643685, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
-  - {fileID: 530085199, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: 1457174161, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: -902546844, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: -1071590712, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
   smokedSprites:
-  - {fileID: 664925257, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 905395227, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: -1022388646, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 1223411526, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 1329416453, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 1720210818, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 1918206072, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: -1762892998, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 193149630, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 1948854047, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 1900178736, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 437366398, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
 --- !u!60 &886389771
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15789,15 +15789,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.21404234, y: 0.18713859}
+    - - {x: -0.2355049, y: 0.23312989}
       - {x: -0.2166256, y: -0.022833124}
       - {x: -0.08090505, y: -0.1517314}
       - {x: 0.1562408, y: -0.16025376}
       - {x: 0.37657088, y: -0.1686424}
       - {x: 0.61123616, y: -0.16539092}
       - {x: 0.6101184, y: -0.03479232}
-      - {x: 0.13065971, y: 0.11999355}
-      - {x: -0.07718684, y: 0.14628038}
+      - {x: 0.16745271, y: 0.17211702}
+      - {x: -0.0802529, y: 0.18000734}
   m_UseDelaunayMesh: 0
 --- !u!114 &886389772
 MonoBehaviour:
@@ -15811,7 +15811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecdf0e911dd8a34baf403fb83c110ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
 --- !u!114 &886389773
 MonoBehaviour:
   m_ObjectHideFlags: 0

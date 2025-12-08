@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a8105d30d02b8342b8dad3bfc4427ad
-      internalID: 243766348
+      spriteID: 6e6d208540bc66445977a0c359f17dc8
+      internalID: -1014072354
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1e76adf93c849442be14aff8e21384f
-      internalID: 218643685
+      spriteID: 84d98378bd100cc408518a5857f4005f
+      internalID: -398821346
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c52fc64619876ec4b9e453575560e48e
-      internalID: 530085199
+      spriteID: 83cea6a85f6aede41ab48ba677190857
+      internalID: 1472694847
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player Damaged 2_0: 243766348
-      Player Damaged 2_1: 218643685
-      Player Damaged 2_2: 530085199
+      Player Damaged 2_0: -1014072354
+      Player Damaged 2_1: -398821346
+      Player Damaged 2_2: 1472694847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
