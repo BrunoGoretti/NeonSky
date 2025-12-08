@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3491400416193826165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.517, y: -0.338, z: 0}
+  m_LocalPosition: {x: -0.68, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,12 +109,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
+  m_Sprite: {fileID: 690966250, guid: f757e6fd58e44bf438215c359f8e1174, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.25, y: 1.25}
+  m_Size: {x: 1.6666666, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -166,10 +166,6 @@ MonoBehaviour:
   flashPrefab: {fileID: 7817427041030878826, guid: 2bcf823970cd8734f9438a872922e89e,
     type: 3}
   firePoint: {fileID: 2172117610644739871}
-  sprites:
-  - {fileID: 176313155, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
-  - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
-  - {fileID: -1191239228, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   baseMoveSpeed: 5
   fireRate: 0.7
   obstacleLayer:
@@ -184,6 +180,25 @@ MonoBehaviour:
   playerTrackingStrength: 2.2
   trackingActivationDistance: 16
   moneyReward: 2
+  normalSprites:
+  - {fileID: 690966250, guid: f757e6fd58e44bf438215c359f8e1174, type: 3}
+  - {fileID: -1760590517, guid: f757e6fd58e44bf438215c359f8e1174, type: 3}
+  - {fileID: -1752147982, guid: f757e6fd58e44bf438215c359f8e1174, type: 3}
+  damagedSprites:
+  - {fileID: 1998831885, guid: fa79995e78fd816499fc87e97c437a25, type: 3}
+  - {fileID: 2108172141, guid: fa79995e78fd816499fc87e97c437a25, type: 3}
+  - {fileID: 1264288057, guid: fa79995e78fd816499fc87e97c437a25, type: 3}
+  superDamagedSprites:
+  - {fileID: -135886021, guid: 830a6405ce460f84c8b6d71f04a07409, type: 3}
+  - {fileID: -404656898, guid: 830a6405ce460f84c8b6d71f04a07409, type: 3}
+  - {fileID: 753422625, guid: 830a6405ce460f84c8b6d71f04a07409, type: 3}
+  smokedSprites:
+  - {fileID: -1723049843, guid: 4035e4fe33887ba44aa1c8f9f3fab030, type: 3}
+  - {fileID: -1241661560, guid: 4035e4fe33887ba44aa1c8f9f3fab030, type: 3}
+  - {fileID: -1950816487, guid: 4035e4fe33887ba44aa1c8f9f3fab030, type: 3}
+  - {fileID: -1327203717, guid: 4035e4fe33887ba44aa1c8f9f3fab030, type: 3}
+  - {fileID: 2108181506, guid: 4035e4fe33887ba44aa1c8f9f3fab030, type: 3}
+  - {fileID: -245191621, guid: 4035e4fe33887ba44aa1c8f9f3fab030, type: 3}
 --- !u!60 &1403522257998360108
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -220,23 +235,23 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 1.25}
-    newSize: {x: 1.25, y: 1.25}
+    oldSize: {x: 1.6666666, y: 1.25}
+    newSize: {x: 1.6666666, y: 1.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.41111636, y: -0.10492803}
-      - {x: -0.42316628, y: -0.24295999}
-      - {x: -0.26353955, y: -0.29214132}
-      - {x: 0.019089855, y: -0.3006711}
-      - {x: 0.36091965, y: -0.31272087}
-      - {x: 0.4291911, y: -0.16514397}
-      - {x: 0.48341465, y: 0.14002925}
-      - {x: 0.16368714, y: -0.013605416}
-      - {x: -0.18873581, y: 0.026063979}
+    - - {x: -0.51672983, y: 0.0006855875}
+      - {x: -0.52584624, y: -0.12854524}
+      - {x: -0.28114176, y: -0.17185909}
+      - {x: -0.0102473125, y: -0.2009249}
+      - {x: 0.18783063, y: -0.1953724}
+      - {x: 0.288373, y: -0.03312698}
+      - {x: 0.31325912, y: 0.2632451}
+      - {x: 0.11968127, y: 0.11547792}
+      - {x: -0.33248767, y: 0.11700904}
   m_UseDelaunayMesh: 0
 --- !u!114 &214366217568287700
 MonoBehaviour:

@@ -15735,16 +15735,16 @@ MonoBehaviour:
   - {fileID: 1090532533, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
   - {fileID: -575234595, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
   superDamagedSprites:
-  - {fileID: 1457174161, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
-  - {fileID: -902546844, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
-  - {fileID: -1071590712, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: -1014072354, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: -398821346, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: 1472694847, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
   smokedSprites:
-  - {fileID: 1918206072, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: -1762892998, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 193149630, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 1948854047, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 1900178736, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
-  - {fileID: 437366398, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: -1313398099, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 847469182, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 636518845, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: -551612226, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 554343269, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
+  - {fileID: 648294994, guid: 0828801d5525ad641afb7f7d1f406868, type: 3}
 --- !u!60 &886389771
 PolygonCollider2D:
   m_ObjectHideFlags: 0

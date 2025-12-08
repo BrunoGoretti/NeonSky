@@ -7,7 +7,6 @@ public class EnemyJetA : MonoBehaviour
     [SerializeField] private GameObject enemyBulletPrefab;
     [SerializeField] private GameObject flashPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private Sprite[] sprites;
 
     [Header("Movement")]
     [SerializeField] private float baseMoveSpeed = 5f;
@@ -25,9 +24,15 @@ public class EnemyJetA : MonoBehaviour
     [Header("Player Tracking")]
     [SerializeField] private float playerTrackingStrength = 2.2f;
     [SerializeField] private float trackingActivationDistance = 16f;
-    
+
     [Header("Money Reward")]
     [SerializeField] private int moneyReward = 10;
+
+    [Header("Damage Sprites")]
+    [SerializeField] private Sprite[] normalSprites;
+    [SerializeField] private Sprite[] damagedSprites;
+    [SerializeField] private Sprite[] superDamagedSprites;
+    [SerializeField] private Sprite[] smokedSprites;
 
     private SpriteRenderer spriteRenderer;
     private int spriteIndex;
@@ -36,6 +41,7 @@ public class EnemyJetA : MonoBehaviour
     private float desiredYVelocity;
     private float currentYVelocity;
     private Transform player;
+    private EnemyHealth enemyHealth;
 
     private readonly Vector2[] scanDirections = {
         Vector2.left,
@@ -45,17 +51,22 @@ public class EnemyJetA : MonoBehaviour
         Vector2.up
     };
 
-    private void Awake() => startPosition = transform.position;
+    private void Awake()
+    {
+        startPosition = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyHealth = GetComponent<EnemyHealth>();
+    }
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         InvokeRepeating(nameof(AnimateSprite), 0.08f, 0.08f);
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
             player = playerObj.transform;
     }
+
 
     private void Update()
     {
@@ -188,15 +199,27 @@ public class EnemyJetA : MonoBehaviour
 
     private void AnimateSprite()
     {
-        if (sprites.Length == 0) return;
-        spriteIndex = (spriteIndex + 1) % sprites.Length;
-        spriteRenderer.sprite = sprites[spriteIndex];
+        if (enemyHealth == null) return;
+
+        float hpPercent = (float)enemyHealth.CurrentHealth / enemyHealth.MaxHealth;
+
+        Sprite[] selectedSprites = normalSprites;
+
+if (hpPercent <= 0.25f && smokedSprites.Length > 0)
+    selectedSprites = smokedSprites;
+else if (hpPercent <= 0.6f && superDamagedSprites.Length > 0)
+    selectedSprites = superDamagedSprites;
+else if (hpPercent <= 0.8f && damagedSprites.Length > 0)
+    selectedSprites = damagedSprites;
+
+        spriteIndex = (spriteIndex + 1) % selectedSprites.Length;
+        spriteRenderer.sprite = selectedSprites[spriteIndex];
     }
 
-        private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Obstacle")) return;
-        
+
         Explode();
     }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1974d25d0ac452347a4a6ddbf93a5a65
+guid: fa79995e78fd816499fc87e97c437a25
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy F21_0
+      name: Enemy F21 Damaged_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3667ef277ab289b459e2f31f27a110c3
-      internalID: 176313155
+      spriteID: 18717caab576f0848b88464d3a032db7
+      internalID: 1998831885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy F21_1
+      name: Enemy F21 Damaged_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 40
         y: 0
-        width: 30
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 826e87daff2a7a8479c0413ad92f8dc0
-      internalID: 121463921
+      spriteID: 45b4d379ae41cb34bbfd8286461617c8
+      internalID: 2108172141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy F21_2
+      name: Enemy F21 Damaged_2
       rect:
         serializedVersion: 2
-        x: 60
+        x: 80
         y: 0
-        width: 30
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35de14411ce33c740bbfcfca23b0bb62
-      internalID: -1191239228
+      spriteID: 02514f57b5f7a3f4f911709d91a36fe3
+      internalID: 1264288057
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy F21_0: 176313155
-      Enemy F21_1: 121463921
-      Enemy F21_2: -1191239228
+      Enemy F21 Damaged_0: 1998831885
+      Enemy F21 Damaged_1: 2108172141
+      Enemy F21 Damaged_2: 1264288057
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

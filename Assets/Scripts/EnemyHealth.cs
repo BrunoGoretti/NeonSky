@@ -7,7 +7,10 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 2;
     private int currentHealth;
 
-    private EnemyJetA enemyJet;  
+    public int CurrentHealth => currentHealth;
+    public int MaxHealth => maxHealth;
+
+    private EnemyJetA enemyJet;
 
     private void Awake()
     {
@@ -20,9 +23,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= amount;
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
     }
 
     private void Die()
