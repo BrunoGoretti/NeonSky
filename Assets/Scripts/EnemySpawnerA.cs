@@ -14,8 +14,8 @@ public class EnemySpawnerA : MonoBehaviour
     private bool isActivated = false;
 
     [Header("Spawn Area (local)")]
-    public Vector2 areaSize = new Vector2(5f, 6f);   
-    public float spawnXOffset = 2f;                  
+    public Vector2 areaSize = new Vector2(5f, 6f);
+    public float spawnXOffset = 2f;
 
     private float timer;
 
@@ -58,7 +58,7 @@ public class EnemySpawnerA : MonoBehaviour
         spawnedEnemies++;
     }
 
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1f, 0.5f, 0f, 0.4f);
@@ -66,5 +66,21 @@ public class EnemySpawnerA : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, areaSize);
+
+        if (Camera.main == null) return;
+
+        Vector3 activationPos = new Vector3(
+            transform.position.x - activationDistance,
+            transform.position.y,
+            transform.position.z
+        );
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(
+            activationPos + Vector3.up * 10f,
+            activationPos + Vector3.down * 10f
+        );
+
+        Gizmos.DrawSphere(activationPos, 0.2f);
     }
 }
