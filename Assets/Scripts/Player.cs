@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private Sprite[] sprites;
     [SerializeField] private GameObject flashPrefab;
 
     [Header("Movement")]
@@ -20,6 +19,13 @@ public class Player : MonoBehaviour
 
     [Header("Ammo")]
     private PlayerAmmo playerAmmo;
+
+    [Header("Damage Sprites")]
+    [SerializeField] private Sprite[] normalSprites;           
+    [SerializeField] private Sprite[] damagedSprites;          
+    [SerializeField] private Sprite[] superDamagedSprites;
+    [SerializeField] private Sprite[] smokedSprites;
+
 
     private PlayerHealth health;
     private SpriteRenderer spriteRenderer;
@@ -113,10 +119,21 @@ public class Player : MonoBehaviour
 
     private void AnimateSprite()
     {
-        if (sprites.Length == 0) return;
-        spriteRenderer.sprite = sprites[spriteIndex = (spriteIndex + 1) % sprites.Length];
-    }
+        if (health == null) return;
 
+        float hpPercent = (float)health.CurrentHealth / health.MaxHealth;
+
+        Sprite[] selectedSprites = normalSprites;
+
+        if (hpPercent <= 0.2f && smokedSprites != null && smokedSprites.Length > 0)
+            selectedSprites = smokedSprites;
+        else if (hpPercent <= 0.4f && superDamagedSprites != null && superDamagedSprites.Length > 0)
+            selectedSprites = superDamagedSprites;
+        else if (hpPercent <= 0.6f && damagedSprites != null && damagedSprites.Length > 0)
+            selectedSprites = damagedSprites;
+
+        spriteRenderer.sprite = selectedSprites[spriteIndex = (spriteIndex + 1) % selectedSprites.Length];
+    }
     private void KeepPlayerInsideScreen()
     {
         Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7881a1308c771e9438718f4753403b92
+guid: ad318b3c4d2934448b675cc3d374dd78
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player 1_0
+      name: Player Damaged_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2908827a92e1314490ee4b9737dba92
-      internalID: -1147082977
+      spriteID: bfeb1d5d569c7a74ab7e3a30ec7b6d91
+      internalID: -1471803450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player 1_1
+      name: Player Damaged_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 40
         y: 0
-        width: 30
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca85393e1839e7e459c6ff2bee670068
-      internalID: -1749021838
+      spriteID: dddfc7120b599434d98b0acfdf88f8fb
+      internalID: 1090532533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player 1_2
+      name: Player Damaged_2
       rect:
         serializedVersion: 2
-        x: 60
+        x: 80
         y: 0
-        width: 30
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9400025c1f5e04a4e806e4a11d2f8583
-      internalID: 469173987
+      spriteID: d8b8e2093acd1b2409a807c073047a8c
+      internalID: -575234595
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player 1_0: -1147082977
-      Player 1_1: -1749021838
-      Player 1_2: 469173987
+      Player Damaged_0: -1471803450
+      Player Damaged_1: 1090532533
+      Player Damaged_2: -575234595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

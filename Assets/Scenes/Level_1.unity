@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 34229584}
   - component: {fileID: 34229583}
   m_Layer: 0
-  m_Name: EnemySpawnerA (1)
+  m_Name: EnemySpawnerA (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   spawnInterval: 0.5
   maxEnemies: 3
   activationDistance: 12
-  areaSize: {x: 5, y: 6}
+  areaSize: {x: 5, y: 2.08}
   spawnXOffset: 2
 --- !u!4 &34229584
 Transform:
@@ -168,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 34229582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.98, y: 1.5, z: -0.04882978}
+  m_LocalPosition: {x: 31.98, y: 0.3, z: -0.04882978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   spawnInterval: 0.5
   maxEnemies: 2
   activationDistance: 12
-  areaSize: {x: 5, y: 6}
+  areaSize: {x: 4.93, y: 4.42}
   spawnXOffset: 2
 --- !u!4 &373669910
 Transform:
@@ -15556,7 +15556,7 @@ Transform:
   m_GameObject: {fileID: 844486720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.4, y: -0.9, z: -0.04882978}
+  m_LocalPosition: {x: 81.17, y: -0.9, z: -0.04882978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15578,8 +15578,8 @@ MonoBehaviour:
     type: 3}
   spawnInterval: 0.5
   maxEnemies: 3
-  activationDistance: 12
-  areaSize: {x: 5, y: 6}
+  activationDistance: 3.7
+  areaSize: {x: 0.83, y: 1.28}
   spawnXOffset: 2
 --- !u!1 &886389765
 GameObject:
@@ -15644,12 +15644,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1147082977, guid: 7881a1308c771e9438718f4753403b92, type: 3}
+  m_Sprite: {fileID: 1208940477, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.25, y: 1.25}
+  m_Size: {x: 1.6666666, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15719,10 +15719,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6535906639362380912, guid: 6b457de6760556242851dc78bf1a80df,
     type: 3}
   firePoint: {fileID: 1054508651}
-  sprites:
-  - {fileID: -1147082977, guid: 7881a1308c771e9438718f4753403b92, type: 3}
-  - {fileID: -1749021838, guid: 7881a1308c771e9438718f4753403b92, type: 3}
-  - {fileID: 469173987, guid: 7881a1308c771e9438718f4753403b92, type: 3}
   flashPrefab: {fileID: 7694045287954660462, guid: 36fd1f642b61bf94984a5abde52e3082,
     type: 3}
   horizontalSpeed: 5
@@ -15730,6 +15726,19 @@ MonoBehaviour:
   verticalAcceleration: 14
   bulletSpeed: 20
   fireRate: 0.25
+  normalSprites:
+  - {fileID: 1208940477, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
+  - {fileID: 1709988831, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
+  - {fileID: 1655338831, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
+  damagedSprites:
+  - {fileID: -1471803450, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
+  - {fileID: 1090532533, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
+  - {fileID: -575234595, guid: ad318b3c4d2934448b675cc3d374dd78, type: 3}
+  superDamagedSprites:
+  - {fileID: 243766348, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: 218643685, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  - {fileID: 530085199, guid: b3803c9a0d5957f4f9057a7e52e73e54, type: 3}
+  smokedSprites: []
 --- !u!60 &886389771
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15766,23 +15775,23 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 1.25}
-    newSize: {x: 1.25, y: 1.25}
+    oldSize: {x: 1.6666666, y: 1.25}
+    newSize: {x: 1.6666666, y: 1.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.41938177, y: 0.10002488}
-      - {x: -0.2912945, y: -0.122391656}
-      - {x: -0.11823946, y: -0.23884502}
-      - {x: 0.05668233, y: -0.24736738}
-      - {x: 0.31434682, y: -0.23708892}
-      - {x: 0.3125607, y: -0.16539092}
-      - {x: 0.30522045, y: -0.09701635}
-      - {x: 0.04354602, y: 0.03910227}
-      - {x: -0.18919016, y: 0.08405633}
+    - - {x: -0.21404234, y: 0.18713859}
+      - {x: -0.2166256, y: -0.022833124}
+      - {x: -0.08090505, y: -0.1517314}
+      - {x: 0.1562408, y: -0.16025376}
+      - {x: 0.37657088, y: -0.1686424}
+      - {x: 0.61123616, y: -0.16539092}
+      - {x: 0.6101184, y: -0.03479232}
+      - {x: 0.13065971, y: 0.11999355}
+      - {x: -0.07718684, y: 0.14628038}
   m_UseDelaunayMesh: 0
 --- !u!114 &886389772
 MonoBehaviour:
@@ -15954,7 +15963,7 @@ GameObject:
   - component: {fileID: 937277114}
   - component: {fileID: 937277115}
   m_Layer: 0
-  m_Name: EnemySpawnerA (2)
+  m_Name: EnemySpawnerA (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15969,7 +15978,7 @@ Transform:
   m_GameObject: {fileID: 937277113}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.05, y: -0.49, z: -0.04882978}
+  m_LocalPosition: {x: 6.8, y: -1.08, z: -0.04882978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15992,7 +16001,7 @@ MonoBehaviour:
   spawnInterval: 0.5
   maxEnemies: 2
   activationDistance: 12
-  areaSize: {x: 5, y: 6}
+  areaSize: {x: 5.04, y: 2.61}
   spawnXOffset: 2
 --- !u!1 &1045856971
 GameObject:
