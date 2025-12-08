@@ -171,7 +171,7 @@ MonoBehaviour:
   - {fileID: 121463921, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   - {fileID: -1191239228, guid: 1974d25d0ac452347a4a6ddbf93a5a65, type: 3}
   baseMoveSpeed: 5
-  fireRate: 1
+  fireRate: 0.7
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -250,4 +250,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3ff381b1c6844438d5e6d528c3a58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 4
