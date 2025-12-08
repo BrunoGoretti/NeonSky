@@ -3,15 +3,19 @@ using UnityEngine;
 public class EnemySpawnerA : MonoBehaviour
 {
     public GameObject enemyPrefab;
+
+    [Header("Spawn Settings")]
     public float spawnInterval = 3f;
-
-    public float spawnYMin = -3f;
-    public float spawnYMax = 3f;
-
     public int maxEnemies = 5;
     private int spawnedEnemies = 0;
 
-    public float activationDistance = 25f;      private bool isActivated = false;
+    [Header("Activation")]
+    public float activationDistance = 25f;
+    private bool isActivated = false;
+
+    [Header("Spawn Area (local)")]
+    public Vector2 areaSize = new Vector2(5f, 6f);   
+    public float spawnXOffset = 2f;                  
 
     private float timer;
 
@@ -26,15 +30,8 @@ public class EnemySpawnerA : MonoBehaviour
         if (!isActivated)
         {
             float distance = transform.position.x - Camera.main.transform.position.x;
-
-            if (distance < activationDistance)
-            {
-                isActivated = true;
-            }
-            else
-            {
-                return;  
-            }
+            if (distance < activationDistance) isActivated = true;
+            else return;
         }
 
         timer += Time.deltaTime;
@@ -45,16 +42,29 @@ public class EnemySpawnerA : MonoBehaviour
         }
     }
 
-void SpawnEnemy()
-{
-    Vector3 rightEdge = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0f, Camera.main.nearClipPlane));
+    void SpawnEnemy()
+    {
+        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(
+            new Vector3(1f, 0.5f, Camera.main.nearClipPlane)
+        );
+
+        float spawnX = rightEdge.x + spawnXOffset;
+
+        float spawnY = transform.position.y + Random.Range(-areaSize.y / 2, areaSize.y / 2);
+
+        Vector3 spawnPos = new Vector3(spawnX, spawnY, transform.position.z);
+
+        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        spawnedEnemies++;
+    }
+
     
-    float spawnX = rightEdge.x + 1.5f;
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1f, 0.5f, 0f, 0.4f);
+        Gizmos.DrawCube(transform.position, areaSize);
 
-    Vector3 spawnPos = new Vector3(spawnX, Random.Range(spawnYMin, spawnYMax), transform.position.z);
-
-    Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-
-    spawnedEnemies++;
-}
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, areaSize);
+    }
 }
