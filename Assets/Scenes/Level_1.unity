@@ -155,10 +155,10 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5369064245798641049, guid: 8581b594b2412034b8b5941f774c80ea,
     type: 3}
   spawnInterval: 0.5
-  spawnYMin: -0.5
-  spawnYMax: 1
   maxEnemies: 3
   activationDistance: 12
+  areaSize: {x: 5, y: 6}
+  spawnXOffset: 2
 --- !u!4 &34229584
 Transform:
   m_ObjectHideFlags: 0
@@ -1760,10 +1760,10 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5369064245798641049, guid: 8581b594b2412034b8b5941f774c80ea,
     type: 3}
   spawnInterval: 0.5
-  spawnYMin: -3
-  spawnYMax: 3
   maxEnemies: 2
   activationDistance: 12
+  areaSize: {x: 5, y: 6}
+  spawnXOffset: 2
 --- !u!4 &373669910
 Transform:
   m_ObjectHideFlags: 0
@@ -15577,10 +15577,10 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5369064245798641049, guid: 8581b594b2412034b8b5941f774c80ea,
     type: 3}
   spawnInterval: 0.5
-  spawnYMin: -0.5
-  spawnYMax: 1
   maxEnemies: 3
   activationDistance: 12
+  areaSize: {x: 5, y: 6}
+  spawnXOffset: 2
 --- !u!1 &886389765
 GameObject:
   m_ObjectHideFlags: 0
@@ -15990,10 +15990,10 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5369064245798641049, guid: 8581b594b2412034b8b5941f774c80ea,
     type: 3}
   spawnInterval: 0.5
-  spawnYMin: -1
-  spawnYMax: 1
   maxEnemies: 2
   activationDistance: 12
+  areaSize: {x: 5, y: 6}
+  spawnXOffset: 2
 --- !u!1 &1045856971
 GameObject:
   m_ObjectHideFlags: 0
@@ -16428,7 +16428,7 @@ GameObject:
   - component: {fileID: 1399552065}
   - component: {fileID: 1399552069}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Paralax Ground
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
