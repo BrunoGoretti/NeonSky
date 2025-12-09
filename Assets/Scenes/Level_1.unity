@@ -17190,8 +17190,8 @@ MonoBehaviour:
     type: 3}
   parallaxSpeed: 4
   riseSpeed: 5
-  spawnYOffset: 5
-  maxHeight: 0.25
+  spawnYOffset: 14.08
+  maxHeight: -8.94
   activationDistance: 50
   player: {fileID: 886389767}
 --- !u!850595691 &1916798273

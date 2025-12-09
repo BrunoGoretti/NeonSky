@@ -59,7 +59,7 @@ public class EnemySpawnerA : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1f, 0.5f, 0f, 0.4f);
         Gizmos.DrawCube(transform.position, areaSize);
