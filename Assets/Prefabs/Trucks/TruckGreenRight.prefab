@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7484153760749575581}
   - component: {fileID: -5185876961774730141}
   - component: {fileID: 5418638323233468428}
-  - component: {fileID: 61527950381292311}
+  - component: {fileID: -4144736974444843764}
   m_Layer: 0
-  m_Name: TruckYellowRight
+  m_Name: TruckGreenRight
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2108244863, guid: 73392ac1119fc5947aa1f5467cb82185, type: 3}
+  m_Sprite: {fileID: 117984095, guid: 73392ac1119fc5947aa1f5467cb82185, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 89098794, guid: 73392ac1119fc5947aa1f5467cb82185, type: 3}
   animationSpeed: 0.1
---- !u!60 &61527950381292311
+--- !u!60 &-4144736974444843764
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,10 +149,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.23848867, y: -0.25779358}
-      - {x: -0.71868813, y: -0.19299406}
-      - {x: -0.7137035, y: -0.81837976}
-      - {x: 0.7934569, y: -0.8333334}
-      - {x: 0.6140121, y: -0.43520057}
-      - {x: 0.2561412, y: -0.43442935}
+    - - {x: -0.13159609, y: -0.38571572}
+      - {x: -0.52118635, y: -0.4502121}
+      - {x: -0.7295197, y: -0.5630297}
+      - {x: -0.7443503, y: -0.8185028}
+      - {x: 0.7925495, y: -0.82221055}
+      - {x: 0.73675525, y: -0.5332788}
+      - {x: 0.5192441, y: -0.46133497}
   m_UseDelaunayMesh: 0
