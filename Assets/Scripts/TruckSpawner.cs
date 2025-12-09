@@ -14,7 +14,7 @@ public class TruckSpawner : MonoBehaviour
     public Vector2 spawnAreaSize = new Vector2(20f, 2f);
 
     [Header("Activation & Movement")]
-    public float activationDistance = 100f; 
+    public float activationDistance = 100f;
     public float moveSpeed = 3f;
     private bool isActivated = false;
 
@@ -56,9 +56,10 @@ public class TruckSpawner : MonoBehaviour
 
     void SpawnTruck()
     {
-        if (truckPrefabs.Length == 0) return;
+        if (truckPrefabs == null || truckPrefabs.Length == 0) return;
 
-        GameObject prefab = truckPrefabs[Random.Range(0, truckPrefabs.Length)];
+        int randomIndex = Random.Range(0, truckPrefabs.Length);
+        GameObject prefab = truckPrefabs[randomIndex];
 
         float spawnY = spawnFromBottom
             ? Camera.main.ViewportToWorldPoint(new Vector3(0.5f, -0.1f, Camera.main.nearClipPlane)).y
