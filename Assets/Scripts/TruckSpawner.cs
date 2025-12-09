@@ -18,13 +18,18 @@ public class TruckSpawner : MonoBehaviour
     public float moveSpeed = 3f;
     private bool isActivated = false;
 
+    [Header("Vertical Movement Settings")]
+    public float verticalSpeed = 4f;   // ONLY vertical speed now
+
     private float timer;
     private int spawnedCount = 0;
 
     private void Update()
     {
+        // Spawner horizontal movement
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
+        // Destroy spawner when completely off-screen
         if (Camera.main.WorldToViewportPoint(transform.position).x < -1f)
         {
             Destroy(gameObject);
@@ -33,6 +38,7 @@ public class TruckSpawner : MonoBehaviour
 
         if (spawnedCount >= maxTrucks) return;
 
+        // Activate only when player camera is close enough
         if (!isActivated)
         {
             float distance = transform.position.x - Camera.main.transform.position.x;
@@ -46,6 +52,7 @@ public class TruckSpawner : MonoBehaviour
             }
         }
 
+        // Spawn timer
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
@@ -61,21 +68,26 @@ public class TruckSpawner : MonoBehaviour
         int randomIndex = Random.Range(0, truckPrefabs.Length);
         GameObject prefab = truckPrefabs[randomIndex];
 
+        // Get spawn Y based on bottom or top
         float spawnY = spawnFromBottom
             ? Camera.main.ViewportToWorldPoint(new Vector3(0.5f, -0.1f, Camera.main.nearClipPlane)).y
             : Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, Camera.main.nearClipPlane)).y;
 
         Vector3 spawnPos = new Vector3(
-            transform.position.x + Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2),
+            transform.position.x + Random.Range(-spawnAreaSize.x / 2f, spawnAreaSize.x / 2f),
             spawnY,
             transform.position.z
         );
 
+        // Create truck
         GameObject truck = Instantiate(prefab, spawnPos, Quaternion.identity);
+
+        // Apply movement values
         TruckMover mover = truck.GetComponent<TruckMover>();
         if (mover != null)
         {
             mover.direction = spawnFromBottom ? Vector2.up : Vector2.down;
+            mover.speed = verticalSpeed;      
             mover.parallaxSpeed = moveSpeed;
         }
 
@@ -87,7 +99,12 @@ public class TruckSpawner : MonoBehaviour
         Gizmos.color = Color.cyan * 0.3f;
         Gizmos.DrawCube(transform.position, new Vector3(spawnAreaSize.x, 20f, 1f));
 
-        Vector3 actLine = new Vector3(transform.position.x - activationDistance, transform.position.y, transform.position.z);
+        // Activation distance visual
+        Vector3 actLine = new Vector3(
+            transform.position.x - activationDistance,
+            transform.position.y,
+            transform.position.z);
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(actLine + Vector3.up * 25f, actLine + Vector3.down * 25f);
         Gizmos.DrawWireSphere(actLine, 1.5f);

@@ -2112,6 +2112,7 @@ MonoBehaviour:
   spawnAreaSize: {x: 0.35, y: 0.91}
   activationDistance: 25.2
   moveSpeed: 4
+  verticalSpeed: 4
 --- !u!1 &563642644
 GameObject:
   m_ObjectHideFlags: 0
@@ -15498,6 +15499,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 547332534}
+  - {fileID: 942069278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &688952592
@@ -16259,6 +16261,64 @@ MonoBehaviour:
   activationDistance: 12
   areaSize: {x: 5.04, y: 2.61}
   spawnXOffset: 2
+--- !u!1 &942069277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942069278}
+  - component: {fileID: 942069279}
+  m_Layer: 0
+  m_Name: TruckSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &942069278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942069277}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.23, y: -1.40208, z: -0.030121505}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 650125760}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942069279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942069277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b3ea242b88b974b81ceae51555b711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  truckPrefabs:
+  - {fileID: 8830442562237619724, guid: d55eff75c0ba32a40a0e8e29a95e2023, type: 3}
+  - {fileID: 2043622026052210591, guid: f15ca13d9286dd7458ce55970a0ae0ab, type: 3}
+  - {fileID: 4627240901785886982, guid: f8f40658030446e4494e26679881d037, type: 3}
+  - {fileID: 285875093527436521, guid: bcf2b4f7fe2da5f45a0135c97d21ec43, type: 3}
+  - {fileID: 1583260056107856237, guid: d409a6d74648e984cae5b1b1c648d095, type: 3}
+  - {fileID: 6056322504692515248, guid: 29f620396cdbcff4fb799db6a9fc0159, type: 3}
+  spawnInterval: 0.1
+  maxTrucks: 1
+  spawnFromBottom: 0
+  spawnAreaSize: {x: 0.35, y: 0.91}
+  activationDistance: 25.2
+  moveSpeed: 4
+  verticalSpeed: 2
 --- !u!1 &967579276
 GameObject:
   m_ObjectHideFlags: 0
