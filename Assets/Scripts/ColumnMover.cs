@@ -14,10 +14,8 @@ public class ColumnMover : MonoBehaviour
 
     private void Update()
     {
-        // Move left continuously
         transform.position += Vector3.left * parallaxSpeed * Time.deltaTime;
 
-        // Destroy when off-screen left
         if (Camera.main.WorldToViewportPoint(transform.position).x < -1f)
         {
             Destroy(gameObject);
