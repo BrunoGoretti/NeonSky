@@ -15647,6 +15647,7 @@ Transform:
   - {fileID: 967579277}
   - {fileID: 844486721}
   - {fileID: 791473483}
+  - {fileID: 1631081185}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791473482
@@ -17033,6 +17034,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1631081184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631081185}
+  - component: {fileID: 1631081186}
+  m_Layer: 0
+  m_Name: EnemySpawnerA (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631081185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631081184}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 131.81, y: -2.9, z: -0.04882978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 766798091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631081186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631081184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722ad9de9de424a418e96d3db0e3f368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 5369064245798641049, guid: 8581b594b2412034b8b5941f774c80ea,
+    type: 3}
+  spawnInterval: 0.6
+  maxEnemies: 4
+  activationDistance: -2.87
+  areaSize: {x: 0.24, y: 3.52}
+  spawnXOffset: 2
 --- !u!1 &1754824475
 GameObject:
   m_ObjectHideFlags: 0
@@ -17168,7 +17220,7 @@ Transform:
   m_GameObject: {fileID: 1912923342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.84, y: -5.61, z: 0}
+  m_LocalPosition: {x: 111.9, y: -5.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17189,10 +17241,10 @@ MonoBehaviour:
   columnPrefab: {fileID: 3576990560339414994, guid: 57f9b963a0c65bd48a0e45e779d1b41e,
     type: 3}
   parallaxSpeed: 4
-  riseSpeed: 5
-  spawnYOffset: 14.08
-  maxHeight: -8.94
-  activationDistance: 50
+  riseSpeed: 3
+  spawnYOffset: 12.3
+  maxHeight: 1.29
+  activationDistance: 20
   player: {fileID: 886389767}
 --- !u!850595691 &1916798273
 LightingSettings:
