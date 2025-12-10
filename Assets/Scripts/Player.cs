@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject flashPrefab;
+    [SerializeField] private GameObject rocketPrefab;
+    [SerializeField] private Transform rocketFirePoint;
 
     [Header("Movement")]
     [SerializeField] private float horizontalSpeed = 10f;
@@ -16,13 +18,15 @@ public class Player : MonoBehaviour
     [Header("Shooting")]
     [SerializeField] private float bulletSpeed = 20f;
     [SerializeField] private float fireRate = 0.25f;
+    [SerializeField] private float rocketSpeed = 12f;
+    [SerializeField] private float rocketFireRate = 1f;
 
     [Header("Ammo")]
     private PlayerAmmo playerAmmo;
 
     [Header("Damage Sprites")]
-    [SerializeField] private Sprite[] normalSprites;           
-    [SerializeField] private Sprite[] damagedSprites;          
+    [SerializeField] private Sprite[] normalSprites;
+    [SerializeField] private Sprite[] damagedSprites;
     [SerializeField] private Sprite[] superDamagedSprites;
     [SerializeField] private Sprite[] smokedSprites;
 
@@ -33,7 +37,8 @@ public class Player : MonoBehaviour
     private float nextFireTime;
     private float verticalVelocity;
     private int spriteIndex;
-
+    private float nextRocketFireTime;
+    private PlayerAmmo rocketAmmo;
     private const float SCREEN_BOUNDARY = 0.0f;
     private const float VERTICAL_DAMPENING = 0.95f;
     private const float SPAWN_HEIGHT = 2f;
@@ -47,6 +52,7 @@ public class Player : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.freezeRotation = true;
         playerAmmo = GetComponent<PlayerAmmo>();
+        rocketAmmo = playerAmmo;
     }
 
     private void Start() => InvokeRepeating(nameof(AnimateSprite), 0.08f, 0.08f);
@@ -63,7 +69,12 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
+        {
             Shoot();
+        }
+        if (Input.GetKey(KeyCode.R) && Time.time >= nextRocketFireTime)
+            ShootRocket();
+
     }
 
     private void FixedUpdate()
@@ -115,6 +126,22 @@ public class Player : MonoBehaviour
         playerAmmo.UseBullet();
 
         nextFireTime = Time.time + fireRate;
+    }
+
+    private void ShootRocket()
+    {
+        if (!rocketPrefab || !rocketFirePoint) return;
+
+        if (!rocketAmmo.CanShootRocket())
+            return;
+
+        GameObject rocket = Instantiate(rocketPrefab, rocketFirePoint.position, rocketFirePoint.rotation);
+
+        if (rocket.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+            rb.velocity = transform.right * rocketSpeed;
+
+        rocketAmmo.UseRocket();
+        nextRocketFireTime = Time.time + rocketFireRate;
     }
 
     private void AnimateSprite()
