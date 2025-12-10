@@ -218,13 +218,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6d97c0a5da7bd44abf2f52187a24be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columnPrefab: {fileID: 88747783}
-  parallaxSpeed: 3
+  columnPrefab: {fileID: 8794354642076465661, guid: c1493276f0fffd04f9979ebdf405d1bd,
+    type: 3}
+  parallaxSpeed: 4
   riseSpeed: 4
   spawnYOffset: 5
   maxHeight: 10
   activationDistance: 10
-  player: {fileID: 0}
+  player: {fileID: 886389767}
 --- !u!1 &149748321
 GameObject:
   m_ObjectHideFlags: 0
