@@ -17241,7 +17241,7 @@ MonoBehaviour:
   columnPrefab: {fileID: 3576990560339414994, guid: 57f9b963a0c65bd48a0e45e779d1b41e,
     type: 3}
   parallaxSpeed: 4
-  riseSpeed: 3
+  riseSpeed: 2.5
   spawnYOffset: 12.3
   maxHeight: 1.29
   activationDistance: 20
