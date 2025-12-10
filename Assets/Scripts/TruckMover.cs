@@ -16,6 +16,7 @@ public class TruckMover : MonoBehaviour
     public Sprite[] sprites;
     public float animationSpeed = 0.1f;
 
+    public GameObject explosionPrefab;
     private int currentSpriteIndex = 0;
     private float timer;
 
@@ -56,5 +57,28 @@ public class TruckMover : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+     private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Explode();
+            other.GetComponent<Player>()?.ExplodePlayer();
+        }
+
+        if (other.CompareTag("Enemy"))
+        {
+            Explode();
+            other.GetComponent<EnemyJetA>()?.Explode(); 
+        }
+    }
+
+    private void Explode()
+    {
+        if (explosionPrefab)
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

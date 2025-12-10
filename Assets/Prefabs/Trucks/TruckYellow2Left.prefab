@@ -159,3 +159,5 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   sprites: []
   animationSpeed: 0.1
+  explosionPrefab: {fileID: 3715262457438393352, guid: ea3579fc1b519594bb752f5629e7f7bb,
+    type: 3}
