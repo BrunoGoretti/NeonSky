@@ -350,6 +350,7 @@ RectTransform:
   - {fileID: 1130116764}
   - {fileID: 1754824476}
   - {fileID: 688952593}
+  - {fileID: 418128855}
   - {fileID: 149748322}
   - {fileID: 907646759}
   - {fileID: 563642645}
@@ -1779,6 +1780,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 766798091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &418128851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418128855}
+  - component: {fileID: 418128854}
+  - component: {fileID: 418128852}
+  - component: {fileID: 418128853}
+  m_Layer: 5
+  m_Name: RocketAmmo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &418128852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418128851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.7971698, b: 0.7971698, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5009e6e4ee9d76b47ac931880688ed3f, type: 3}
+    m_FontSize: 200
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!114 &418128853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418128851}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 12, y: -12}
+  m_UseGraphicAlpha: 1
+--- !u!222 &418128854
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418128851}
+  m_CullTransparentMesh: 0
+--- !u!224 &418128855
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418128851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 277200375}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 240.19, y: 47.700012}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &496972750
 GameObject:
   m_ObjectHideFlags: 0
@@ -15974,11 +16070,16 @@ MonoBehaviour:
   firePoint: {fileID: 1054508651}
   flashPrefab: {fileID: 7694045287954660462, guid: 36fd1f642b61bf94984a5abde52e3082,
     type: 3}
+  rocketPrefab: {fileID: 1356636127549775522, guid: 01ba4d3e5e4bf6b4392e2b52430f382b,
+    type: 3}
+  rocketFirePoint: {fileID: 1054508651}
   horizontalSpeed: 5
   maxVerticalSpeed: 14
   verticalAcceleration: 14
   bulletSpeed: 20
   fireRate: 0.15
+  rocketSpeed: 12
+  rocketFireRate: 0.15
   normalSprites:
   - {fileID: 1208940477, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
   - {fileID: 1709988831, guid: fdcbada7e4e323a409fa6c7a944ca76f, type: 3}
@@ -16078,7 +16179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBullets: 999
+  maxRockets: 999
   ammoText: {fileID: 688952596}
+  rocketText: {fileID: 418128852}
 --- !u!1 &907646758
 GameObject:
   m_ObjectHideFlags: 0

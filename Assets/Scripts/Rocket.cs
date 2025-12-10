@@ -14,6 +14,10 @@ public class Rocket : MonoBehaviour
     [Header("Explosion")]
     public GameObject explosionPrefab;
 
+    [Header("AOE Damage")]
+    public float explosionRadius = 2f;
+    public int aoeDamage = 2;
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private int spriteIndex;
@@ -54,6 +58,7 @@ public class Rocket : MonoBehaviour
     private void DestroySelf()
     {
         CancelInvoke(nameof(AnimateSprite));
+        ApplyAOEDamage();
 
         if (explosionPrefab != null)
         {
@@ -67,4 +72,24 @@ public class Rocket : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    private void ApplyAOEDamage()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.CompareTag("Enemy"))
+            {
+                if (hit.TryGetComponent<EnemyHealth>(out EnemyHealth hp))
+                    hp.TakeDamage(aoeDamage);
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+{
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(transform.position, explosionRadius);
+}
 }

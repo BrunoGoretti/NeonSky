@@ -181,3 +181,5 @@ MonoBehaviour:
   animationSpeed: 0.08
   explosionPrefab: {fileID: 5944937673130440009, guid: 09af3ec3f749bbc4e83bbbaa458aa7ab,
     type: 3}
+  explosionRadius: 1
+  aoeDamage: 5
