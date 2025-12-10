@@ -105,7 +105,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 89098794, guid: 73392ac1119fc5947aa1f5467cb82185, type: 3}
   animationSpeed: 0.1
-  explosionPrefab: {fileID: 3715262457438393352, guid: ea3579fc1b519594bb752f5629e7f7bb,
+  explosionPrefab: {fileID: 1865964102278066848, guid: 5fc3d8c13fb9cc944a24c1b1c9b534f5,
     type: 3}
 --- !u!60 &-4144736974444843764
 PolygonCollider2D:
