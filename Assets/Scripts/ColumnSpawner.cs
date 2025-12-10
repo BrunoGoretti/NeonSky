@@ -12,11 +12,11 @@ public class ColumnSpawner : MonoBehaviour
     public float riseSpeed = 4f;
 
     [Header("Height Settings")]
-    public float spawnYOffset = 5f;   
-    public float maxHeight = 10f;     
+    public float spawnYOffset = 5f;
+    public float maxHeight = 10f;
 
     [Header("Activation")]
-    public float activationDistance = 50f;
+    public float activationDistance = 10f;
 
     [Header("Player Reference")]
     public Transform player;
@@ -63,6 +63,15 @@ public class ColumnSpawner : MonoBehaviour
             mover.player = player;
 
             mover.maxHeight = maxHeight;
+        }
+
+        ColumnUpDownLooper looper = col.GetComponent<ColumnUpDownLooper>();
+        if (looper != null)
+        {
+            looper.parallaxSpeed = parallaxSpeed;
+            looper.verticalSpeed = riseSpeed;
+            looper.maxHeight = maxHeight;
+            looper.minHeight = transform.position.y - spawnYOffset;
         }
     }
 

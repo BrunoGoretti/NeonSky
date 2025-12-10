@@ -84,7 +84,7 @@ public class Rocket : MonoBehaviour
                 if (hit.TryGetComponent<EnemyHealth>(out EnemyHealth hp))
                     hp.TakeDamage(aoeDamage);
             }
-                        if (hit.CompareTag("Player"))
+            if (hit.CompareTag("Player"))
             {
                 if (hit.TryGetComponent<PlayerHealth>(out PlayerHealth hp))
                     hp.TakeDamage(aoeDamage);
@@ -93,8 +93,8 @@ public class Rocket : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected()
-{
-    Gizmos.color = Color.red;
-    Gizmos.DrawWireSphere(transform.position, explosionRadius);
-}
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
 }
