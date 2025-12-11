@@ -178,7 +178,7 @@ MonoBehaviour:
   - {fileID: -1325798813, guid: 2b8c5002f19ff2d498e79113b902c7bd, type: 3}
   - {fileID: -555247752, guid: 2b8c5002f19ff2d498e79113b902c7bd, type: 3}
   - {fileID: 773042451, guid: 2b8c5002f19ff2d498e79113b902c7bd, type: 3}
-  animationSpeed: 0.08
+  animationSpeed: 0.03
   explosionPrefab: {fileID: 5944937673130440009, guid: 09af3ec3f749bbc4e83bbbaa458aa7ab,
     type: 3}
   explosionRadius: 1

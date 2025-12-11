@@ -104,7 +104,7 @@ MonoBehaviour:
   - {fileID: 1113568369, guid: 6ab8c7667f4195a4c9ad1eddcb837beb, type: 3}
   - {fileID: 531298818, guid: 6ab8c7667f4195a4c9ad1eddcb837beb, type: 3}
   - {fileID: -714439766, guid: 6ab8c7667f4195a4c9ad1eddcb837beb, type: 3}
-  frameRate: 0.08
+  frameRate: 0.07
   isPlayerExplosion: 0
   moveSpeed: 5
   explosionLightPrefab: {fileID: 5809752310117806362, guid: a8384101689ab764a829f9e2530826d0,
