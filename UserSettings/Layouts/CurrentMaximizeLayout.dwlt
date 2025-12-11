@@ -238,9 +238,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: acd20000
-      m_LastClickedID: 53932
-      m_ExpandedIDs: 8c95f9ffb0d3fcfffae1feff6a09ffff6236ffff1afbffff18650000f2750000967e00000eb200003cb2000092d20000b6d2000042d3000064d3000070d30000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8c95f9ffb0d3fcfffae1feff6a09ffff6236ffff1afbffff18650000f2750000967e00000eb200003cb2000092d20000b6d2000016d3000042d3000064d3000070d30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -688,9 +688,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1050.5717, y: 47.081272, z: -0.8602431}
+    m_Target: {x: 4.9740963, y: 0.81131995, z: -0.06941118}
     speed: 2
-    m_Value: {x: 1050.5717, y: 47.081272, z: -0.8602431}
+    m_Value: {x: 4.9740963, y: 0.81131995, z: -0.06941118}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -740,9 +740,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 87.06814
+    m_Target: 7.98757
     speed: 2
-    m_Value: 87.06814
+    m_Value: 7.98757
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -914,7 +914,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/UI Sprites
+    - Assets/Prefabs/Enemy
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -922,15 +922,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Sprites/UI Sprites
+  - Assets/Prefabs/Enemy
   m_LastFoldersGridSize: 58
   m_LastProjectPath: C:\Users\Gor\source\repos\NeonSky
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 117}
-    m_SelectedIDs: 5a6b0000
-    m_LastClickedID: 27482
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 406b0000
+    m_LastClickedID: 27456
     m_ExpandedIDs: 0000000066680000686800006a6800006c6800006e6800007068000072680000746800007668000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -984,9 +984,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: acd20000
-    m_LastClickedInstanceID: 53932
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ce5c0000365e000000000000f25d0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1104,8 +1104,8 @@ MonoBehaviour:
     y: 0
     width: 506
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
