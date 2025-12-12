@@ -238,9 +238,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ce640000
-      m_LastClickedID: 25806
-      m_ExpandedIDs: 8c95f9ffb0d3fcfffae1feff6a09ffff6236ffff1afbffff3a640000ea64000018650000f2750000967e00000eb200003cb2000092d20000b6d2000016d3000042d3000064d3000070d30000
+      m_SelectedIDs: 4046feff
+      m_LastClickedID: -113088
+      m_ExpandedIDs: 8c95f9ffb0d3fcff208ffeff1691feff1cc9feffbcc9fefff4cafeff9ecbfeff48ccfeff9ccdfeff4ecefefff8cefeffa2cffefffae1feff6a09ffffe626ffffac27ffff2a29ffff6236ffff1afbffff3a6400003c640000ea640000ec64000018650000f2750000967e00008e8700003e8800002c8e0000748f0000a88f00000eb200003cb2000092d20000b6d2000016d3000042d3000064d3000070d30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -629,7 +629,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -688,9 +688,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 557.3352, y: 307.22165, z: -3.8711731}
+    m_Target: {x: 716.19354, y: 213.12456, z: -1.777067}
     speed: 2
-    m_Value: {x: 557.3352, y: 307.22165, z: -3.8711731}
+    m_Value: {x: 716.19354, y: 213.12456, z: -1.777067}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -740,9 +740,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 398.0168
+    m_Target: 339.8021
     speed: 2
-    m_Value: 398.0168
+    m_Value: 339.8021
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -914,7 +914,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs/Enemy
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -922,16 +922,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs/Enemy
   m_LastFoldersGridSize: 58
   m_LastProjectPath: C:\Users\Gor\source\repos\NeonSky
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 153}
-    m_SelectedIDs: 706b0000
-    m_LastClickedID: 27504
-    m_ExpandedIDs: 0000000086680000886800008a6800008c6800008e6800009068000092680000946800009668000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 726b0000
+    m_LastClickedID: 27506
+    m_ExpandedIDs: 000000000e6a0000106a0000126a0000146a0000166a0000186a00001a6a00001c6a00001e6a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -959,7 +959,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086680000886800008a6800008c6800008e6800009068000092680000946800009668000000ca9a3b
+    m_ExpandedIDs: 000000000e6a0000106a0000126a0000146a0000166a0000186a00001a6a00001c6a00001e6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -984,10 +984,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ce640000
-    m_LastClickedInstanceID: 25806
+    m_SelectedInstanceIDs: 4046feff
+    m_LastClickedInstanceID: -113088
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000ce5c0000365e000000000000f25d0100
+    m_ExpandedInstanceIDs: c6230000ce5c0000365e0000f25d010000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
