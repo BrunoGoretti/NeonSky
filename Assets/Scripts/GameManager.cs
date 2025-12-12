@@ -9,35 +9,36 @@ public class GameManager : MonoBehaviour
     public GameObject gameOver;
     private int score;
 
-private void Awake()
-{
-    Application.targetFrameRate = 60;
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
 
-    gameOver.SetActive(false);
-    playButton.SetActive(true);
+        gameOver.SetActive(false);
+        playButton.SetActive(true);
 
-    Pause();
-}
-public void Play()
-{
-    score = 0;
-    scoreText.text = score.ToString();
+        Pause();
+    }
+    public void Play()
+    {
+        FindObjectOfType<GameOverScreen>().FadeToClear();
 
-    playButton.SetActive(false);
-    gameOver.SetActive(false);
+        score = 0;
+        scoreText.text = score.ToString();
 
-    player.gameObject.SetActive(true);
+        playButton.SetActive(false);
+        gameOver.SetActive(false);
 
-    player.enabled = true;
+        player.gameObject.SetActive(true);
+        player.enabled = true;
 
-    Time.timeScale = 1f;
+        Time.timeScale = 1f;
 
-    Pipes[] pipes = FindObjectsOfType<Pipes>();
-    for (int i = 0; i < pipes.Length; i++)
-        Destroy(pipes[i].gameObject);
+        Pipes[] pipes = FindObjectsOfType<Pipes>();
+        for (int i = 0; i < pipes.Length; i++)
+            Destroy(pipes[i].gameObject);
 
-    player.transform.position = new Vector3(0, 0, 0);
-}
+        player.transform.position = new Vector3(0, 0, 0);
+    }
 
     public void Pause()
     {
@@ -47,6 +48,8 @@ public void Play()
 
     public void GameOver()
     {
+        FindObjectOfType<GameOverScreen>().FadeToBlack();
+
         gameOver.SetActive(true);
         playButton.SetActive(true);
 
