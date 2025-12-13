@@ -7,23 +7,27 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
-
+private GameManager gameManager;
     private bool isPaused = false;
 
     private void Awake()
     {
         pauseMenu.SetActive(false);
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-                Resume();
-            else
-                Pause();
-        }
+  if (Input.GetKeyDown(KeyCode.Escape))
+    {
+        if (gameManager != null && gameManager.IsGameOver)
+            return;  
+
+        if (isPaused)
+            Resume();
+        else
+            Pause();
+    }
     }
 
     public void Pause()

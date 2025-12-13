@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenuButton;
 
     public GameObject gameOver;
+    private bool isGameOver = false;
+    public bool IsGameOver => isGameOver;
 
 private void Awake()
 {
@@ -22,6 +24,8 @@ private void Awake()
 }
     public void Play()
     {
+                isGameOver = false;
+
         FindObjectOfType<GameOverScreen>().FadeToClear();
 
         playButton.SetActive(false);
@@ -48,6 +52,7 @@ private void Awake()
 
     public void GameOver()
     {
+         isGameOver = true;
         FindObjectOfType<GameOverScreen>().FadeToBlack();
 
         gameOver.SetActive(true);
