@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    public Text scoreText;
     public GameObject playButton;
     public GameObject mainMenuButton;
 
     public GameObject gameOver;
-    private int score;
 
 private void Awake()
 {
@@ -25,9 +23,6 @@ private void Awake()
     public void Play()
     {
         FindObjectOfType<GameOverScreen>().FadeToClear();
-
-        score = 0;
-        scoreText.text = score.ToString();
 
         playButton.SetActive(false);
         mainMenuButton.SetActive(false);
@@ -66,13 +61,5 @@ private void Awake()
     {
          Time.timeScale = 1f;
          SceneManager.LoadScene("MainMenu");
-    }
-
-
-
-    public void IncreaseScore()
-    {
-        score++;
-        scoreText.text = score.ToString();
     }
 }
