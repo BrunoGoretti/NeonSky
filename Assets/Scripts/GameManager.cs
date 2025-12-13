@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
     public Text scoreText;
     public GameObject playButton;
+    public GameObject mainMenuButton;
+
     public GameObject gameOver;
     private int score;
 
@@ -15,6 +18,7 @@ public class GameManager : MonoBehaviour
 
         gameOver.SetActive(false);
         playButton.SetActive(true);
+        mainMenuButton.SetActive(true);
 
         Pause();
     }
@@ -26,6 +30,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
 
         playButton.SetActive(false);
+        mainMenuButton.SetActive(false);
         gameOver.SetActive(false);
 
         player.gameObject.SetActive(true);
@@ -52,13 +57,15 @@ public class GameManager : MonoBehaviour
 
         gameOver.SetActive(true);
         playButton.SetActive(true);
+        mainMenuButton.SetActive(true);
 
         Pause();
     }
 
-    public void ExitGame()
+    public void MainMenu()
     {
-        Application.Quit();
+         Time.timeScale = 1f;
+         SceneManager.LoadScene("MainMenu");
     }
 
 
