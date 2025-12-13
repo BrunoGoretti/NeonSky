@@ -12,16 +12,16 @@ public class GameManager : MonoBehaviour
     public GameObject gameOver;
     private int score;
 
-    private void Awake()
-    {
-        Application.targetFrameRate = 60;
+private void Awake()
+{
+    Application.targetFrameRate = 60;
 
-        gameOver.SetActive(false);
-        playButton.SetActive(true);
-        mainMenuButton.SetActive(true);
+    gameOver.SetActive(false);
+    playButton.SetActive(false);
+    mainMenuButton.SetActive(false);
 
-        Pause();
-    }
+    Time.timeScale = 1f;  
+}
     public void Play()
     {
         FindObjectOfType<GameOverScreen>().FadeToClear();
